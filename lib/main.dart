@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(color: kTextColor),
 
         ),
+        //hello i am thunder
 
 
         // This is the theme of your application.
