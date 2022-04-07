@@ -23,15 +23,12 @@ class MyApp extends StatelessWidget {
           elevation: 0,
           brightness: Brightness.light,
           iconTheme: IconThemeData(color: Colors.black),
-
         ),
         textTheme: TextTheme(
           bodyText1: TextStyle(color: kTextColor),
           bodyText2: TextStyle(color: kTextColor),
-
         ),
-        //hello i am thunder
-
+        //hello i am thunder and wellcom to my project
 
         // This is the theme of your application.
         //
@@ -45,7 +42,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-     // home:SplashScreen(),
+      // home:SplashScreen(),
       initialRoute: SplashScreen.routeName,
       routes: routes,
     );
