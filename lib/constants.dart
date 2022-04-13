@@ -22,9 +22,15 @@ final headingStyle = TextStyle(
   height: 1.5,
 );
 
-final headingStyle2 = TextStyle(
+final headingStyleSecond = TextStyle(
   fontSize: getProportionateScreenWidth(24),
   fontWeight: FontWeight.bold,
+  color: kTextColor,
+  height: 1.5,
+);
+
+final primaryText = TextStyle(
+  fontSize: getProportionateScreenWidth(18),
   color: kTextColor,
   height: 1.5,
 );

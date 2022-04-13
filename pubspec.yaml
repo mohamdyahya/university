@@ -73,6 +73,12 @@ flutter:
     - assets/icons/email.svg
     - assets/icons/Error.svg
     - assets/icons/user.svg
+    - assets/icons/done.svg
+    - assets/icons/noti.svg
+    - assets/icons/logout.svg
+    - assets/icons/info.svg
+    - assets/icons/dark.svg
+    - assets/icons/arrow_left.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -24,7 +24,7 @@ class Body extends StatelessWidget {
                 SizedBox(height: SizeConfig.screenHeight * 0.01),
                 Text(
                   "تسجيل الدخول",
-                   style: headingStyle2
+                   style: headingStyleSecond
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
                 SignForm(),

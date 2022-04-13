@@ -11,8 +11,8 @@ class SplashScreen extends StatelessWidget {
     // You have to call it on your starting screen
     SizeConfig().init(context);
     return Scaffold(
-      body: Directionality( // add this
-        textDirection: TextDirection.rtl, // set this property
+      body: Directionality(
+        textDirection: TextDirection.rtl,
         child: Body(),
     ));
   }
