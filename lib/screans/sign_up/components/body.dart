@@ -22,7 +22,7 @@ class Body extends StatelessWidget {
                 SizedBox(height: SizeConfig.screenHeight * 0.01),
                 Text(
                     "إنشاء حساب",
-                    style: headingStyle2
+                    style: headingStyleSecond
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 SignUpForm(),

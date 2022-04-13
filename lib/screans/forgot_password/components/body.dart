@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
               SizedBox(height: SizeConfig.screenHeight * 0.01),
               Text(
                 "نسيت كلمة المرور",
-                style: headingStyle2
+                style: headingStyleSecond
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.1),
               ForgotPassForm(),
