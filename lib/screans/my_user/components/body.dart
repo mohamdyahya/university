@@ -17,25 +17,25 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.02),
 
-              Stack(children: [
-                CircleAvatar(
-                  radius: 120,
-                  backgroundImage: NetworkImage(
-                      "https://womenss.net/wp-content/uploads/2021/01/8774-2.jpg"),
-                ),
-                Positioned(
-                  top: 160,
-                  bottom: 1,
-                  left: 160,
-                  right: 1,
-                  child: CircleAvatar(
-                    radius: 15.0,
-                    backgroundColor: kPrimaryColor,
-                    child: IconButton(
-                        onPressed: () {}, icon: Icon(Icons.edit,color: kTextColor,)),
+              Column(
+                children: [
+                  CircleAvatar(
+                    child:Container(
+                      alignment: Alignment.bottomRight,
+                      padding: EdgeInsets.only(right: 20),
+                      child: CircleAvatar(
+                        radius: 25,
+                        backgroundColor: kPrimaryColor,
+                        child: IconButton(
+                            onPressed: () {}, icon: Icon(Icons.edit,color: kTextColor,)),
+                      ),
+                    ) ,
+                    radius: 130,
+                    backgroundImage: NetworkImage(
+                        "https://womenss.net/wp-content/uploads/2021/01/8774-2.jpg"),
                   ),
-                )
-              ]),
+                ],
+              ),
               SizedBox(height: SizeConfig.screenHeight * 0.01),
               Text(
                 "محمد نور بدوي ",
