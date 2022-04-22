@@ -1,5 +1,9 @@
-
 import 'package:flutter/material.dart';
+import 'package:university/screans/reservations/my_reservations_screen.dart';
+import '../../../components/custom_surfix_icon.dart';
+import '../../../components/default_button.dart';
+import '../../../constants.dart';
+import '../../../size_config.dart';
 
 class Body extends StatefulWidget {
 
@@ -14,8 +18,6 @@ class NewObject {
 
 
 class _BodyState extends State<Body> {
-  Color color1 = Colors.black;
-  Color color2 = Colors.black;
   static final List<NewObject> items = <NewObject>[
     NewObject('مكان الانطلاق', Icons.location_city_outlined),
     NewObject('Apple', Icons.access_alarms),
@@ -43,6 +45,7 @@ class _BodyState extends State<Body> {
   String select= 'one';
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return  Scaffold(
     body:Container(
         color: Colors.white,
@@ -50,156 +53,15 @@ class _BodyState extends State<Body> {
         child: SingleChildScrollView(
           child:
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Center(
-                child: Container(
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1,color: Colors.white),
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.black,
-                  ),
-                  // padding: EdgeInsets.all(10),
-                  width: 350,
-                  height: 50,
-                  // alignment: Alignment.centerLeft,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1,color: Colors.black),
-                            borderRadius: BorderRadius.circular(10),
-                            color: color1,),
-                          //alignment: Alignment.centerRight,
-                          width: 150,
-                          padding: EdgeInsets.only(left: 10, right: 10),
-                          margin: EdgeInsets.only(left: 10),
-                          child: TextButton(onPressed: (){
-                            setState(() {
-                              color1=Colors.white30;
-                              color2=Colors.black87;
-                            });
-                          },child: Text(
-                            'التسجيل على رحلة',
-                            style: TextStyle(color: Colors.white),
-                          ))),
-                      Container(
-
-                        padding: EdgeInsets.all(10),
-                        color: Colors.white,
-                        width: 2,
-                        height: 20,
-                      ),
-                      Container(
-                          decoration: BoxDecoration(
-                            color: color2,
-                            border: Border.all(width: 1,color: Colors.black),
-                            borderRadius: BorderRadius.circular(10),),
-
-                          width: 150,
-                          margin: EdgeInsets.only(left: 10),
-                          padding: EdgeInsets.only(left: 10, right: 10),
-                          child: TextButton(onPressed: () {
-                            setState(() {
-                              color2=Colors.white30;
-                              color1=Colors.black;
-                            });
-
-                          }, child:Text(
-                            'الأسعار والأوقات',
-                            style: TextStyle(color: Colors.white),
-                          )))
-                    ],
-                  ),
-                ),
-              ),
-              // Container(
-              //   width: double.infinity,
-              //   height: 100,
-              //   margin: EdgeInsets.all(20),
-              //   decoration: BoxDecoration(
-              //
-              //     border: Border.all(width: 1,color: Colors.black),
-              //     borderRadius: BorderRadius.circular(20),),
-              //
-              // ),
-              // Container(
-              //   width: double.infinity,
-              //   height: 100,
-              //   margin: EdgeInsets.all(20),
-              //   decoration: BoxDecoration(
-              //
-              //     border: Border.all(width: 1,color: Colors.black),
-              //     borderRadius: BorderRadius.circular(20),),
-              //
-              // ),
-              Stack(
-                children: <Widget>[
-                  Container(
-                    width: 400,
-                    height: 50,
-                    margin: EdgeInsets.only(bottom: 20,right: 20,left: 20,top: 45),
-                    // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black38),
-                    ),
-                    child: TextField(
-                      // strutStyle: ,
-                      maxLines: 1,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                          borderRadius: BorderRadius.circular(1.0),
-                        ),
-                        hintText: "قم بأدخال اسمك",
-                      ),
-                      autofocus: false,
-                    ),
-                  ),
-                  Positioned(
-                    top: 25.0,
-                    left: 30.0,
-                    right: 30.0,
-                    child: Row(
-                      children: <Widget>[
-                        Flexible(
-                          child: Container(
-                            // padding: EdgeInsets.symmetric(
-                            //   horizontal: 2.0,
-                            // ),
-                            decoration:  BoxDecoration(
-                              // border: InputBorder.none,
-                              color: Colors.white,
-                            ),
-                            child: Text(
-                              'الاسم',
-                              style: TextStyle(
-                                  color: Colors.black45,
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.bold
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
               Container(
                   width: double.infinity,
                   margin: EdgeInsets.all(20),
                   // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black38),
+                    color: kTextWhite,
+                    border: Border.all(color: kTextGray),
                   ),
                   child:  DropdownButtonHideUnderline(
                     child: DropdownButton<NewObject>(
@@ -212,10 +74,7 @@ class _BodyState extends State<Body> {
                             const SizedBox(width: 8),
                             Text(
                               item.title,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
+                              style: primaryText
                             ),
                           ],
                         ),
@@ -236,8 +95,8 @@ class _BodyState extends State<Body> {
                   // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black38),
+                    color: kTextWhite,
+                    border: Border.all(color: kTextGray),
                   ),
                   child:  DropdownButtonHideUnderline(
                     child: DropdownButton<NewObject>(
@@ -274,8 +133,8 @@ class _BodyState extends State<Body> {
                   // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black38),
+                    color: kTextWhite,
+                    border: Border.all(color: kTextGray),
                   ),
                   child:  DropdownButtonHideUnderline(
                     child: DropdownButton<NewObject>(
@@ -338,20 +197,9 @@ class _BodyState extends State<Body> {
                   ),
                 ],
               ),
-
-
-
-              Container(
-                height: 50,
-                width: 250,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.yellowAccent[400],
-                  border: Border.all(color: Colors.black38),
-                ),
-                child: Center(child: Text("التسجيل على رحلة ",style: TextStyle(fontSize: 20),)),
-              )
-
+              DefaultButton(
+                text: "التسجيل على رحلة",
+              ),
             ],
           ),
         ),
@@ -359,4 +207,26 @@ class _BodyState extends State<Body> {
       )
     );
   }
+
+/*
+  TextFormField buildNameFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.name,
+      decoration: InputDecoration(
+        labelText: "الاسم",
+        hintText: "أدخل الاسم هنا",
+        labelStyle: TextStyle(color: kTextColor),
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        // floatingLabelBehavior: FloatingLabelBehavior.always,
+        prefixIcon: CustomSurffixIcon(svgIcon: "assets/icons/user.svg"),
+        border: outlineInputBorder(),
+        enabledBorder: outlineInputBorder(),
+        focusedBorder: outlineInputBorder(),
+        contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 10),
+      ),
+    );
+  }
+  */
+
 }

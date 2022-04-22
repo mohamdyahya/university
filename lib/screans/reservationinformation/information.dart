@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:university/constants.dart';
+
+import '../../size_config.dart';
 
 class Reservation_infrmation_page extends StatefulWidget {
   @override
@@ -11,6 +14,7 @@ class _Reservation_infrmation_pageState
     extends State<Reservation_infrmation_page> {
   Color color1 = Colors.black;
   Color color2 = Colors.black;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -20,85 +24,76 @@ class _Reservation_infrmation_pageState
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              Center(
-                child: Container(
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.white),
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.black,
-                  ),
-                  // padding: EdgeInsets.all(10),
-                  width: 350,
-                  height: 50,
-                  // alignment: Alignment.centerLeft,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: Colors.black),
-                            borderRadius: BorderRadius.circular(10),
-                            color: color1,
-                          ),
-                          //alignment: Alignment.centerRight,
-                          width: 150,
-                          padding: EdgeInsets.only(left: 10, right: 10),
-                          margin: EdgeInsets.only(left: 10),
-                          child: TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  color1 = Colors.white30;
-                                  color2 = Colors.black87;
-                                });
-                              },
-                              child: Text(
-                                'التسجيل على رحلة',
-                                style: TextStyle(color: Colors.white),
-                              ))),
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        color: Colors.white,
-                        width: 2,
-                        height: 20,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: color2,
-                          border: Border.all(width: 1, color: Colors.black),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        width: 150,
-                        margin: EdgeInsets.only(left: 10),
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        child: TextButton(
-                          onPressed: () {
-                            setState(() {
-                              color2 = Colors.white30;
-                              color1 = Colors.black;
-                            });
-                          },
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.all(4),
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: kTextWhite,
+                  border: Border.all(width: 1, color: kTextWhite),
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: kShadowColor,
+                      spreadRadius: 0.3,
+                      blurRadius: 5,
+                      offset: Offset(-1, 5), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        child: Align(
                           child: Text(
-                            'الأسعار والأوقات',
-                            style: TextStyle(color: Colors.white),
+                            '50 ليرة تركي',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
                           ),
+                          alignment: Alignment.center,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      width: 1,
+                      height: 50,
+                      child: Container(
+                        color: kTextGray,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        child: Align(
+                          child: Text(
+                            'رحلة ذهاب وإياب بنفس اليوم',
+                            style: primaryText,
+                            textAlign: TextAlign.right,
+                          ),
+                          alignment: Alignment.center,
+                        ),
+                      ),
+                    ),
+
+                  ],
                 ),
               ),
+              SizedBox(height:20),
               Container(
-                width: 350,
-                height: 80,
-                margin: EdgeInsets.only(top: 20),
+                width: double.infinity,
+                margin: EdgeInsets.all(4),
+                padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(width: 1, color: Colors.white),
+                  color: kTextWhite,
+                  border: Border.all(width: 1, color: kTextWhite),
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black12,
+                      color: kShadowColor,
                       spreadRadius: 0.3,
                       blurRadius: 5,
                       offset: Offset(-1, 5), // changes position of shadow
@@ -108,91 +103,38 @@ class _Reservation_infrmation_pageState
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      width: 170,
-                      height: 80,
-                      child: Align(
-                        child: Text(
-                          '50',
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        child: Align(
+                          child: Text(
+                            'رحلة ذهاب وإياب بنفس اليوم',
+                            style: primaryText,
+                            textAlign: TextAlign.right,
+                          ),
+                          alignment: Alignment.center,
                         ),
-                        alignment: Alignment.center,
                       ),
                     ),
                     SizedBox(
                       width: 1,
                       height: 50,
                       child: Container(
-                        color: Colors.black45,
+                        color: kTextGray,
                       ),
                     ),
-                    Container(
-                      width: 170,
-                      height: 80,
-                      padding: EdgeInsets.all(10),
-                      child: Align(
-                        child: Text(
-                          'رحلة الذهاب فقط أو الإياب فقط',
-                          style: TextStyle(fontSize: 19),
-                          textAlign: TextAlign.right,
-                        ),
-                        alignment: Alignment.center,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                width: 350,
-                height: 80,
-                margin: EdgeInsets.only(top: 20),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(width: 1, color: Colors.white),
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      spreadRadius: 0.3,
-                      blurRadius: 5,
-                      offset: Offset(-1, 5), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      width: 170,
-                      height: 80,
-                      padding: EdgeInsets.all(10),
-                      child: Align(
-                        child: Text(
-                          'رحلة الذهاب فقط أو الإياب فقط',
-                          style: TextStyle(fontSize: 19),
-                          textAlign: TextAlign.right,
-                        ),
-                        alignment: Alignment.center,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 1,
-                      height: 50,
+                    Expanded(
+                      flex: 1,
                       child: Container(
-                        color: Colors.black45,
-                      ),
-                    ),
-                    Container(
-                      width: 170,
-                      height: 80,
-                      child: Align(
-                        child: Text(
-                          '50',
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                        child: Align(
+                          child: Text(
+                            '50 ليرة تركي',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          alignment: Alignment.center,
                         ),
-                        alignment: Alignment.center,
                       ),
                     ),
                   ],
@@ -205,29 +147,28 @@ class _Reservation_infrmation_pageState
                     child: Align(
                       child: Text('أوقات الانطلاق من الغربي إلى الشمالي',
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
+                              fontSize: 16, fontWeight: FontWeight.bold)),
                       alignment: Alignment.centerRight,
                     ),
                   ),
                   Container(
-                    height: 70,
                     margin: EdgeInsets.only(top: 10),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
                           Container(
+                            padding:  EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 24),
                             margin: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 15),
-                            width: 90,
-                            height: 50,
+                                vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(width: 1, color: Colors.white),
+                              color: kTextWhite,
+                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black12,
+                                  color: kShadowColor,
                                   spreadRadius: 0.3,
                                   blurRadius: 5,
                                   offset: Offset(
@@ -238,23 +179,23 @@ class _Reservation_infrmation_pageState
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 22,
                                   )),
                               alignment: Alignment.center,
                             ),
                           ),
                           Container(
+                            padding:  EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 24),
                             margin: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 15),
-                            width: 90,
-                            height: 50,
+                                vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(width: 1, color: Colors.white),
+                              color: kTextWhite,
+                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black12,
+                                  color: kShadowColor,
                                   spreadRadius: 0.3,
                                   blurRadius: 5,
                                   offset: Offset(
@@ -265,23 +206,23 @@ class _Reservation_infrmation_pageState
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 22,
                                   )),
                               alignment: Alignment.center,
                             ),
                           ),
                           Container(
+                            padding:  EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 24),
                             margin: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 15),
-                            width: 90,
-                            height: 50,
+                                vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(width: 1, color: Colors.white),
+                              color: kTextWhite,
+                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black12,
+                                  color: kShadowColor,
                                   spreadRadius: 0.3,
                                   blurRadius: 5,
                                   offset: Offset(
@@ -292,23 +233,23 @@ class _Reservation_infrmation_pageState
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 22,
                                   )),
                               alignment: Alignment.center,
                             ),
                           ),
                           Container(
+                            padding:  EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 24),
                             margin: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 15),
-                            width: 90,
-                            height: 50,
+                                vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(width: 1, color: Colors.white),
+                              color: kTextWhite,
+                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black12,
+                                  color: kShadowColor,
                                   spreadRadius: 0.3,
                                   blurRadius: 5,
                                   offset: Offset(
@@ -319,38 +260,12 @@ class _Reservation_infrmation_pageState
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 22,
                                   )),
                               alignment: Alignment.center,
                             ),
                           ),
-                          Container(
-                            margin: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 15),
-                            width: 90,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(width: 1, color: Colors.white),
-                              borderRadius: BorderRadius.circular(10),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black12,
-                                  spreadRadius: 0.3,
-                                  blurRadius: 5,
-                                  offset: Offset(
-                                      -1, 5), // changes position of shadow
-                                ),
-                              ],
-                            ),
-                            child: Align(
-                              child: Text('6:50',
-                                  style: TextStyle(
-                                    fontSize: 30,
-                                  )),
-                              alignment: Alignment.center,
-                            ),
-                          ),
+
                         ],
                       ),
                     ),
@@ -362,31 +277,30 @@ class _Reservation_infrmation_pageState
                   Container(
                     margin: EdgeInsets.only(right: 40, top: 30),
                     child: Align(
-                      child: Text('أوقات الانطلاق من الغربي إلى الشمالي',
+                      child: Text('أوقات العودة من الغربي إلى الشمالي',
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
+                              fontSize: 16, fontWeight: FontWeight.bold)),
                       alignment: Alignment.centerRight,
                     ),
                   ),
                   Container(
-                    height: 70,
                     margin: EdgeInsets.only(top: 10),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
                           Container(
+                            padding:  EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 24),
                             margin: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 15),
-                            width: 90,
-                            height: 50,
+                                vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(width: 1, color: Colors.white),
+                              color: kTextWhite,
+                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black12,
+                                  color: kShadowColor,
                                   spreadRadius: 0.3,
                                   blurRadius: 5,
                                   offset: Offset(
@@ -397,23 +311,23 @@ class _Reservation_infrmation_pageState
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 22,
                                   )),
                               alignment: Alignment.center,
                             ),
                           ),
                           Container(
+                            padding:  EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 24),
                             margin: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 15),
-                            width: 90,
-                            height: 50,
+                                vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(width: 1, color: Colors.white),
+                              color: kTextWhite,
+                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black12,
+                                  color: kShadowColor,
                                   spreadRadius: 0.3,
                                   blurRadius: 5,
                                   offset: Offset(
@@ -424,23 +338,23 @@ class _Reservation_infrmation_pageState
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 22,
                                   )),
                               alignment: Alignment.center,
                             ),
                           ),
                           Container(
+                            padding:  EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 24),
                             margin: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 15),
-                            width: 90,
-                            height: 50,
+                                vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(width: 1, color: Colors.white),
+                              color: kTextWhite,
+                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black12,
+                                  color: kShadowColor,
                                   spreadRadius: 0.3,
                                   blurRadius: 5,
                                   offset: Offset(
@@ -451,23 +365,23 @@ class _Reservation_infrmation_pageState
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 22,
                                   )),
                               alignment: Alignment.center,
                             ),
                           ),
                           Container(
+                            padding:  EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 24),
                             margin: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 15),
-                            width: 90,
-                            height: 50,
+                                vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(width: 1, color: Colors.white),
+                              color: kTextWhite,
+                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black12,
+                                  color: kShadowColor,
                                   spreadRadius: 0.3,
                                   blurRadius: 5,
                                   offset: Offset(
@@ -478,39 +392,12 @@ class _Reservation_infrmation_pageState
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 22,
                                   )),
                               alignment: Alignment.center,
                             ),
                           ),
-                          Container(
-                            margin: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 15),
-                            width: 90,
-                            height: 50,
-                            padding: EdgeInsets.all(2),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(width: 1, color: Colors.white),
-                              borderRadius: BorderRadius.circular(10),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black12,
-                                  spreadRadius: 0.3,
-                                  blurRadius: 5,
-                                  offset: Offset(
-                                      -1, 5), // changes position of shadow
-                                ),
-                              ],
-                            ),
-                            child: Align(
-                              child: Text('6:50',
-                                  style: TextStyle(
-                                    fontSize: 30,
-                                  )),
-                              alignment: Alignment.center,
-                            ),
-                          ),
+
                         ],
                       ),
                     ),
