@@ -34,10 +34,10 @@ class MyApp extends StatelessWidget {
           bodyText1: TextStyle(color: kTextColor),
           bodyText2: TextStyle(color: kTextColor),
         ),
-        //hello i am thunder and wellcom to my project 
+        //hello i am thunder and wellcom to my project  
 
         // This is the theme of your application.
-        //
+        // 
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
         // changing the primarySwatch below to Colors.green and then invoke
