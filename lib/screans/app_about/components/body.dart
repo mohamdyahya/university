@@ -29,7 +29,6 @@ class Body extends StatelessWidget {
             child: SvgPicture.asset("assets/icons/logo.svg"),
           ),
           Spacer(flex: 1),
-
           Text(
               "ريحلي حالك",
               style: headingStyleSecond

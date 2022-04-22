@@ -5,7 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:university/screans/app_about/app_info_screen.dart';
 import 'package:university/screans/forgot_password/forgot_password_screen.dart';
 import 'package:university/screans/login_success/login_success_screen.dart';
-import 'package:university/screans/my_user/my_reservations_screen.dart';
+import 'package:university/screans/my_user/my_user_screen.dart';
+import 'package:university/screans/notification/notification_screen.dart';
 import 'package:university/screans/reservations/my_reservations_screen.dart';
 import 'package:university/screans/sign_in/sign_in_screen.dart';
 import 'package:university/screans/sign_up/sign_up_screen.dart';
@@ -20,4 +21,5 @@ final Map<String, WidgetBuilder> routes = {
   AppInfoScrean.routeName: (context) => AppInfoScrean(),
   MyReservations.routeName: (context) => MyReservations(),
   MyUser.routeName: (context) => MyUser(),
+  NotificationScrean.routeName: (context) => NotificationScrean(),
 };

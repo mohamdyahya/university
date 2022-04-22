@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../components/navigation_bar.dart';
 import '../../size_config.dart';
 import 'components/body.dart';
 
@@ -19,6 +20,7 @@ class AppInfoScrean extends StatelessWidget {
           // add this
           textDirection: TextDirection.rtl, // set this property
           child: Body(),
-        ));
+        ),
+    );
   }
 }

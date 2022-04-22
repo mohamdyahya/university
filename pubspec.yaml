@@ -72,13 +72,26 @@ flutter:
     - assets/icons/password.svg
     - assets/icons/email.svg
     - assets/icons/Error.svg
-    - assets/icons/user.svg
     - assets/icons/done.svg
-    - assets/icons/noti.svg
+    - assets/icons/bell.svg
     - assets/icons/logout.svg
     - assets/icons/info.svg
     - assets/icons/dark.svg
     - assets/icons/arrow_left.svg
+    - assets/icons/home_bottom.svg
+    - assets/icons/transport-bottom.svg
+    - assets/icons/property_bottom.svg
+    - assets/icons/reservation_bottom.svg
+    - assets/icons/building.svg
+    - assets/icons/building_strock.svg
+    - assets/icons/card.svg
+    - assets/icons/card_strock.svg
+    - assets/icons/home.svg
+    - assets/icons/home_strock.svg
+    - assets/icons/taxi.svg
+    - assets/icons/taxi_strock.svg
+    - assets/icons/user.svg
+    - assets/icons/user_strock.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
