@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:university/screans/register/components/body.dart';
-
-import '../register//Components/body.dart';
-
 class Reservation extends StatefulWidget {
 
   @override
@@ -15,9 +12,7 @@ class _ReservationState extends State<Reservation> {
   Widget build(BuildContext context) {
     return Directionality(
         textDirection: TextDirection.rtl,
-        child: Scaffold(
-          body: body(),
-        ));
+        child: Body());
   }
 }
 

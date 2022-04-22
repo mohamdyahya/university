@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 
-class body extends StatefulWidget {
+class Body extends StatefulWidget {
 
   @override
-  State<body> createState() => _bodyState();
+  State<Body> createState() => _BodyState();
 }
 class NewObject {
   final String title;
@@ -13,7 +13,7 @@ class NewObject {
 }
 
 
-class _bodyState extends State<body> {
+class _BodyState extends State<Body> {
   Color color1 = Colors.black;
   Color color2 = Colors.black;
   static final List<NewObject> items = <NewObject>[
@@ -43,8 +43,8 @@ class _bodyState extends State<body> {
   String select= 'one';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return  Scaffold(
+    body:Container(
         color: Colors.white,
         padding: EdgeInsets.only(top: 40),
         child: SingleChildScrollView(
@@ -356,7 +356,7 @@ class _bodyState extends State<body> {
           ),
         ),
 
-      ),
+      )
     );
   }
 }
