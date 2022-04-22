@@ -115,26 +115,6 @@ class _BodyState extends State<Body> {
                   ),
                 ),
               ),
-              // Container(
-              //   width: double.infinity,
-              //   height: 100,
-              //   margin: EdgeInsets.all(20),
-              //   decoration: BoxDecoration(
-              //
-              //     border: Border.all(width: 1,color: Colors.black),
-              //     borderRadius: BorderRadius.circular(20),),
-              //
-              // ),
-              // Container(
-              //   width: double.infinity,
-              //   height: 100,
-              //   margin: EdgeInsets.all(20),
-              //   decoration: BoxDecoration(
-              //
-              //     border: Border.all(width: 1,color: Colors.black),
-              //     borderRadius: BorderRadius.circular(20),),
-              //
-              // ),
               Stack(
                 children: <Widget>[
                   Container(
