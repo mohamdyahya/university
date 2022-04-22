@@ -48,7 +48,7 @@ class Body extends StatelessWidget {
 
               InkWell(
                 child: Row(children: [
-                  SvgPicture.asset("assets/icons/noti.svg", height: 24 , width: 24 , alignment: Alignment.center),
+                  SvgPicture.asset("assets/icons/bell.svg", height: 24 , width: 24 , alignment: Alignment.center),
                   Spacer(
                     flex: 1,
                   ),

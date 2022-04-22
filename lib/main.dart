@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:university/constants.dart';
 import 'package:university/routes.dart';
 import 'package:university/screans/app_about/app_info_screen.dart';
-import 'package:university/screans/my_user/my_reservations_screen.dart';
+import 'package:university/screans/my_user/my_user_screen.dart';
+import 'package:university/screans/notification/notification_screen.dart';
 import 'package:university/screans/reservations/my_reservations_screen.dart';
 import 'package:university/screans/sign_up/sign_up_screen.dart';
 import 'package:university/screans/splash/splash_screen.dart';
+
+import 'components/navigation_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -45,9 +48,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // home:SplashScreen(),
-      initialRoute: MyUser.routeName,
-      routes: routes,
+       home: Navigation(),
+   //   initialRoute: MyReservations.routeName,
+  //    routes: routes,
     );
   }
 }

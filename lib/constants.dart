@@ -12,6 +12,7 @@ const kPrimaryGradientColor = LinearGradient(
 const kSecondaryColor = Color(0xD92B2B2B);
 const kTextColor = Color(0xFF2B2B2B);
 const kTextGray = Color(0xFFaaaaaa);
+const kTextWhite = Color(0xFFffffff);
 
 const kAnimationDuration = Duration(milliseconds: 200);
 
@@ -31,6 +32,7 @@ final headingStyleSecond = TextStyle(
 
 final primaryText = TextStyle(
   fontSize: getProportionateScreenWidth(18),
+  fontWeight: FontWeight.bold,
   color: kTextColor,
   height: 1.5,
 );
