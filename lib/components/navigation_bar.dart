@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../constants.dart';
+import '../screans/Main/MainPage.dart';
 import '../screans/app_about/app_info_screen.dart';
 import '../screans/my_user/my_user_screen.dart';
 import '../screans/notification/notification_screen.dart';
@@ -14,7 +15,7 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   int index = 0;
   final screens = [
-    MyReservations(),
+    Main_Page(),
     AppInfoScrean(),
     NotificationScrean(),
     AppInfoScrean(),

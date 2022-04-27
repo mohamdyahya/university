@@ -18,7 +18,7 @@ final Map<String, WidgetBuilder> routes = {
   LoginSuccessScreen.routeName: (context) => LoginSuccessScreen(),
   SignUpScreen.routeName: (context) => SignUpScreen(),
   AppInfoScrean.routeName: (context) => AppInfoScrean(),
-  MyReservations.routeName: (context) => MyReservations(),
+  MyReservations.routeName: (context) => Main_Page(),
 
 
 };
