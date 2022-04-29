@@ -102,218 +102,70 @@ class _bodyState extends State<body> {
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(15),
-                          child: MaterialButton(
-                            onPressed: () {},
-                            color: Color(0xffFFEDA6),
-                            height: 70,
-                            minWidth: 40,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.home,
-                                  color: Color(0xff2B2B2B),
-                                  size: 30,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            "شقة",
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(15),
-                          child: MaterialButton(
-                            onPressed: () {},
-                            color: Color(0xffFFEDA6),
-                            height: 70,
-                            minWidth: 40,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.home,
-                                  color: Color(0xff2B2B2B),
-                                  size: 30,
-                                ),
-                              ],
+              Container(
+                margin: EdgeInsets.only(right: 20),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: MaterialButton(
+                              onPressed: () {},
+                              color: Color(0xffFFEDA6),
+                              height: 70,
+                              minWidth: 40,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Icon(
+                                Icons.home,
+                                color: Color(0xff2B2B2B),
+                                size: 30,
+                              ),
                             ),
                           ),
-                        ),
-                        Text(
-                          "شقة",
-                          style: TextStyle(fontSize: 18),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(15),
-                          child: MaterialButton(
-                            onPressed: () {},
-                            color: Color(0xffFFEDA6),
-                            height: 70,
-                            minWidth: 40,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: Text(
+                              "شقة",
+                              style: TextStyle(fontSize: 18),
                             ),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.home,
-                                  color: Color(0xff2B2B2B),
-                                  size: 30,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text(
-                          "شقة",
-                          style: TextStyle(fontSize: 18),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(15),
-                          child: MaterialButton(
-                            onPressed: () {},
-                            color: Color(0xffFFEDA6),
-                            height: 70,
-                            minWidth: 40,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.home,
-                                  color: Color(0xff2B2B2B),
-                                  size: 30,
-                                ),
-                              ],
+                          )
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: MaterialButton(
+                              onPressed: () {},
+                              color: Color(0xffFFEDA6),
+                              height: 70,
+                              minWidth: 40,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Icon(
+                                Icons.home,
+                                color: Color(0xff2B2B2B),
+                                size: 30,
+                              ),
                             ),
                           ),
-                        ),
-                        Text(
-                          "شقة",
-                          style: TextStyle(fontSize: 18),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(15),
-                          child: MaterialButton(
-                            onPressed: () {},
-                            color: Color(0xffFFEDA6),
-                            height: 70,
-                            minWidth: 40,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: Text(
+                              "شقة",
+                              style: TextStyle(fontSize: 18),
                             ),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.home,
-                                  color: Color(0xff2B2B2B),
-                                  size: 30,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text(
-                          "شقة",
-                          style: TextStyle(fontSize: 18),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(15),
-                          child: MaterialButton(
-                            onPressed: () {},
-                            color: Color(0xffFFEDA6),
-                            height: 70,
-                            minWidth: 40,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.home,
-                                  color: Color(0xff2B2B2B),
-                                  size: 30,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            "شقة",
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(15),
-                          child: MaterialButton(
-                            onPressed: () {},
-                            color: Color(0xffFFEDA6),
-                            height: 70,
-                            minWidth: 40,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.home,
-                                  color: Color(0xff2B2B2B),
-                                  size: 30,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Text(
-                          "شقة",
-                          style: TextStyle(fontSize: 18),
-                        )
-                      ],
-                    ),
-                  ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],
@@ -419,335 +271,200 @@ class _bodyState extends State<body> {
                   ),
                 ]),
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.only(right: 20),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+          Container(
+            height: 130,
+            margin: EdgeInsets.only(left: 20),
+            decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black12,
+                      spreadRadius: 0.9,
+                      blurRadius: 50,
+                      offset: Offset(0, 0) // changes position of shadow
+                  )]),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Container(
+                    height: 125,
+                    padding: EdgeInsets.only(right: 20),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
                       ),
-                    ),
-                    child: Row(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              //padding: EdgeInsets.only(left: 20),
-                              alignment: Alignment.centerLeft,
-                              height: 120,
-                              width: 150,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image.network(
-                                    'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'),
-                              ),
+                      child: Row(
+                        children: [
+                          Container(
+                            //padding: EdgeInsets.only(left: 20),
+                            alignment: Alignment.centerLeft,
+                            height: 120,
+                            width: 150,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.network(
+                                  'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'),
                             ),
-                            Column(
-                              children: [
-                                Container(
-                                  padding:
-                                      EdgeInsets.only(left: 10, right: 10),
-                                  child: Text(
-                                    "شقة للأجار",
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                margin:
+                                EdgeInsets.only(left: 10, right: 10),
+                                child: Text(
+                                  "شقة للأجار",
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color(0xff2B2B2B),
+                                  ),
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(left: 5,right: 10),
+                                    color:Colors.yellowAccent[100],
+                                    child: Icon(
+                                      Icons.room_outlined,
+                                      color: Colors.black,
+                                      size: 20,
+                                    ),
+                                  ),
+                                  Text(
+                                    " 4 غرف",
                                     textAlign: TextAlign.right,
                                     style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 15,
                                       color: Color(0xff2B2B2B),
                                     ),
                                   ),
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " عدد الغرف",
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xff2B2B2B),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " عدد الغرف",
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xff2B2B2B),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              //padding: EdgeInsets.only(left: 20),
-                              alignment: Alignment.centerLeft,
-                              height: 120,
-                              width: 150,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image.network(
-                                    'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'),
+                                ],
                               ),
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  padding:
-                                      EdgeInsets.only(left: 10, right: 10),
-                                  child: Text(
-                                    "شقة للأجار",
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(left: 5,right: 10),
+                                    color:Colors.yellowAccent[100],
+                                    child: Icon(
+                                      Icons.room_outlined,
+                                      color: Colors.black,
+                                      size: 20,
+                                    ),
+                                  ),
+                                  Text(
+                                    " 125 متر",
                                     textAlign: TextAlign.right,
                                     style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 15,
                                       color: Color(0xff2B2B2B),
                                     ),
                                   ),
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " عدد الغرف",
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xff2B2B2B),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " عدد الغرف",
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xff2B2B2B),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
                       ),
                     ),
-                    child: Row(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              //padding: EdgeInsets.only(left: 20),
-                              alignment: Alignment.centerLeft,
-                              height: 120,
-                              width: 150,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image.network(
-                                    'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'),
-                              ),
+                  ),Container(
+                    height: 125,
+                    padding: EdgeInsets.only(right: 20),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            //padding: EdgeInsets.only(left: 20),
+                            alignment: Alignment.centerLeft,
+                            height: 120,
+                            width: 150,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.network(
+                                  'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'),
                             ),
-                            Column(
-                              children: [
-                                Container(
-                                  padding:
-                                      EdgeInsets.only(left: 10, right: 10),
-                                  child: Text(
-                                    "شقة للأجار",
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                margin:
+                                EdgeInsets.only(left: 10, right: 10),
+                                child: Text(
+                                  "شقة للأجار",
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color(0xff2B2B2B),
+                                  ),
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(left: 5,right: 10),
+                                    color:Colors.yellowAccent[100],
+                                    child: Icon(
+                                      Icons.room_outlined,
+                                      color: Colors.black,
+                                      size: 20,
+                                    ),
+                                  ),
+                                  Text(
+                                    " 4 غرف",
                                     textAlign: TextAlign.right,
                                     style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 15,
                                       color: Color(0xff2B2B2B),
                                     ),
                                   ),
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " عدد الغرف",
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xff2B2B2B),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " عدد الغرف",
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xff2B2B2B),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              //padding: EdgeInsets.only(left: 20),
-                              alignment: Alignment.centerLeft,
-                              height: 120,
-                              width: 150,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image.network(
-                                    'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'),
+                                ],
                               ),
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  padding:
-                                      EdgeInsets.only(left: 10, right: 10),
-                                  child: Text(
-                                    "شقة للأجار",
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(left: 5,right: 10),
+                                    color:Colors.yellowAccent[100],
+                                    child: Icon(
+                                      Icons.room_outlined,
+                                      color: Colors.black,
+                                      size: 20,
+                                    ),
+                                  ),
+                                  Text(
+                                    " 125 متر",
                                     textAlign: TextAlign.right,
                                     style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 15,
                                       color: Color(0xff2B2B2B),
                                     ),
                                   ),
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " عدد الغرف",
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xff2B2B2B),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
-                                    ),
-                                    Text(
-                                      " عدد الغرف",
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xff2B2B2B),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Column(
