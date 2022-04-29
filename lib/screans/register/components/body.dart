@@ -1,5 +1,9 @@
-
 import 'package:flutter/material.dart';
+import 'package:university/screans/reservations/my_reservations_screen.dart';
+import '../../../components/custom_surfix_icon.dart';
+import '../../../components/default_button.dart';
+import '../../../constants.dart';
+import '../../../size_config.dart';
 
 class Body extends StatefulWidget {
 
@@ -14,8 +18,6 @@ class NewObject {
 
 
 class _BodyState extends State<Body> {
-  Color color1 = Colors.black;
-  Color color2 = Colors.black;
   static final List<NewObject> items = <NewObject>[
     NewObject('مكان الانطلاق', Icons.location_city_outlined),
     NewObject('Apple', Icons.access_alarms),
@@ -43,6 +45,7 @@ class _BodyState extends State<Body> {
   String select= 'one';
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return  Scaffold(
     body:Container(
         color: Colors.white,
@@ -50,7 +53,6 @@ class _BodyState extends State<Body> {
         child: SingleChildScrollView(
           child:
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Center(
                 child: Container(
@@ -172,14 +174,15 @@ class _BodyState extends State<Body> {
                   ),
                 ],
               ),
+
               Container(
                   width: double.infinity,
                   margin: EdgeInsets.all(20),
                   // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black38),
+                    color: kTextWhite,
+                    border: Border.all(color: kTextGray),
                   ),
                   child:  DropdownButtonHideUnderline(
                     child: DropdownButton<NewObject>(
@@ -192,10 +195,7 @@ class _BodyState extends State<Body> {
                             const SizedBox(width: 8),
                             Text(
                               item.title,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
+                              style: primaryText
                             ),
                           ],
                         ),
@@ -216,8 +216,8 @@ class _BodyState extends State<Body> {
                   // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black38),
+                    color: kTextWhite,
+                    border: Border.all(color: kTextGray),
                   ),
                   child:  DropdownButtonHideUnderline(
                     child: DropdownButton<NewObject>(
@@ -254,8 +254,8 @@ class _BodyState extends State<Body> {
                   // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black38),
+                    color: kTextWhite,
+                    border: Border.all(color: kTextGray),
                   ),
                   child:  DropdownButtonHideUnderline(
                     child: DropdownButton<NewObject>(
@@ -318,20 +318,6 @@ class _BodyState extends State<Body> {
                   ),
                 ],
               ),
-
-
-
-              Container(
-                height: 50,
-                width: 250,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.yellowAccent[400],
-                  border: Border.all(color: Colors.black38),
-                ),
-                child: Center(child: Text("التسجيل على رحلة ",style: TextStyle(fontSize: 20),)),
-              )
-
             ],
           ),
         ),
@@ -339,4 +325,26 @@ class _BodyState extends State<Body> {
       )
     );
   }
+
+/*
+  TextFormField buildNameFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.name,
+      decoration: InputDecoration(
+        labelText: "الاسم",
+        hintText: "أدخل الاسم هنا",
+        labelStyle: TextStyle(color: kTextColor),
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        // floatingLabelBehavior: FloatingLabelBehavior.always,
+        prefixIcon: CustomSurffixIcon(svgIcon: "assets/icons/user.svg"),
+        border: outlineInputBorder(),
+        enabledBorder: outlineInputBorder(),
+        focusedBorder: outlineInputBorder(),
+        contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 10),
+      ),
+    );
+  }
+  */
+
 }
