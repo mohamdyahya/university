@@ -54,63 +54,7 @@ class _BodyState extends State<Body> {
           child:
           Column(
             children: [
-              Stack(
-                children: <Widget>[
-                  Container(
-                    width: 400,
-                    height: 50,
-                    margin: EdgeInsets.only(bottom: 20,right: 20,left: 20,top: 45),
-                    // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black38),
-                    ),
-                    child: TextField(
-                      // strutStyle: ,
-                      maxLines: 1,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white,
-                          ),
-                          borderRadius: BorderRadius.circular(1.0),
-                        ),
-                        hintText: "قم بأدخال اسمك",
-                      ),
-                      autofocus: false,
-                    ),
-                  ),
-                  Positioned(
-                    top: 25.0,
-                    left: 30.0,
-                    right: 30.0,
-                    child: Row(
-                      children: <Widget>[
-                        Flexible(
-                          child: Container(
-                            // padding: EdgeInsets.symmetric(
-                            //   horizontal: 2.0,
-                            // ),
-                            decoration:  BoxDecoration(
-                              // border: InputBorder.none,
-                              color: Colors.white,
-                            ),
-                            child: Text(
-                              'الاسم',
-                              style: TextStyle(
-                                  color: Colors.black45,
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.bold
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+
 
               Container(
                   width: double.infinity,
