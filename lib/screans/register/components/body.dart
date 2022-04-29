@@ -54,69 +54,6 @@ class _BodyState extends State<Body> {
           child:
           Column(
             children: [
-              Center(
-                child: Container(
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1,color: Colors.white),
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.black,
-                  ),
-                  // padding: EdgeInsets.all(10),
-                  width: 350,
-                  height: 50,
-                  // alignment: Alignment.centerLeft,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1,color: Colors.black),
-                            borderRadius: BorderRadius.circular(10),
-                            color: color1,),
-                          //alignment: Alignment.centerRight,
-                          width: 150,
-                          padding: EdgeInsets.only(left: 10, right: 10),
-                          margin: EdgeInsets.only(left: 10),
-                          child: TextButton(onPressed: (){
-                            setState(() {
-                              color1=Colors.white30;
-                              color2=Colors.black87;
-                            });
-                          },child: Text(
-                            'التسجيل على رحلة',
-                            style: TextStyle(color: Colors.white),
-                          ))),
-                      Container(
-
-                        padding: EdgeInsets.all(10),
-                        color: Colors.white,
-                        width: 2,
-                        height: 20,
-                      ),
-                      Container(
-                          decoration: BoxDecoration(
-                            color: color2,
-                            border: Border.all(width: 1,color: Colors.black),
-                            borderRadius: BorderRadius.circular(10),),
-
-                          width: 150,
-                          margin: EdgeInsets.only(left: 10),
-                          padding: EdgeInsets.only(left: 10, right: 10),
-                          child: TextButton(onPressed: () {
-                            setState(() {
-                              color2=Colors.white30;
-                              color1=Colors.black;
-                            });
-
-                          }, child:Text(
-                            'الأسعار والأوقات',
-                            style: TextStyle(color: Colors.white),
-                          )))
-                    ],
-                  ),
-                ),
-              ),
               Stack(
                 children: <Widget>[
                   Container(
