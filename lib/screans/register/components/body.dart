@@ -304,6 +304,47 @@ class _BodyState extends State<Body> {
                         });}),
                         Text('إياب'),
                       ],
+    body:Container(
+        color: Colors.white,
+        padding: EdgeInsets.only(top: 40),
+        child: SingleChildScrollView(
+          child:
+          Column(
+            children: [
+
+
+              Container(
+                  width: double.infinity,
+                  margin: EdgeInsets.all(20),
+                  // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: kTextWhite,
+                    border: Border.all(color: kTextGray),
+                  ),
+                  child:  DropdownButtonHideUnderline(
+                    child: DropdownButton<NewObject>(
+                      value: value, // currently selected item
+                      items: items
+                          .map((item) => DropdownMenuItem<NewObject>(
+                        child: Row(
+                          children: [
+                            Icon(item.icon),
+                            const SizedBox(width: 8),
+                            Text(
+                              item.title,
+                              style: primaryText
+                            ),
+                          ],
+                        ),
+                        value: item,
+                      ))
+                          .toList(),
+                      onChanged: (value) => setState(() {
+                        if(value!=null){
+                          this.value = value;
+                        }
+                      }),
                     ),
                     Row(
                       children: [
