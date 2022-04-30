@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:university/constants.dart';
 import 'package:university/routes.dart';
+import 'package:university/screans/Poropert_information/property.dart';
 import 'package:university/screans/app_about/app_info_screen.dart';
 import 'package:university/screans/my_user/my_user_screen.dart';
 import 'package:university/screans/notification/notification_screen.dart';
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-       home: AllRegister(),
+       home: Test(),
    //   initialRoute: MyReservations.routeName,
   //    routes: routes,
     );

@@ -1,10 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:university/size_config.dart';
 
 import '../../../constants.dart';
-int activeIndex=0;
+
+int activeIndex = 0;
 final List<String> imageList = [
   "assets/images/2.jpg",
   "assets/images/3.jpg",
@@ -12,17 +15,17 @@ final List<String> imageList = [
   "assets/images/5.jpg",
   "assets/images/6.jpg"
 ];
-Widget buildIndicator() =>AnimatedSmoothIndicator(
-  activeIndex: activeIndex,
-  count: imageList.length,
-  effect: ExpandingDotsEffect(
-    dotWidth: 10,
-    dotHeight: 10,
-    dotColor: Colors.white,
-    activeDotColor: kPrimaryColor
 
-  ),
-);
+Widget buildIndicator() => AnimatedSmoothIndicator(
+      activeIndex: activeIndex,
+      count: imageList.length,
+      effect: ExpandingDotsEffect(
+          dotWidth: getProportionateScreenWidth(8),
+          dotHeight: getProportionateScreenHeight(8),
+          dotColor: kTextWhite,
+          activeDotColor: kPrimaryColor),
+    );
+
 class body extends StatefulWidget {
   @override
   State<body> createState() => _bodyState();
@@ -38,52 +41,56 @@ class _bodyState extends State<body> {
           Column(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 15,left: 10,right: 10,bottom: 0),
+                margin:
+                    EdgeInsets.only(top: 15, left: 10, right: 10, bottom: 0),
                 child: Column(
                   children: [
-                    Stack(children: [
-                    CarouselSlider.builder(
-                      itemCount: imageList.length,
-                      options: CarouselOptions(
-                        enableInfiniteScroll: false,
-                        viewportFraction: 1,
-                        enlargeCenterPage: true,
-                        height: 250,
-                        // reverse: true,
-                        aspectRatio: 0.5,
-                        onPageChanged: (index,reason){
-                          setState(() {
-                            activeIndex=index;
-                          });
-                        }
-                      ),
-                      itemBuilder: (context, i, id) {
-                        //for onTap to redirect to another screen
-                        return GestureDetector(
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                border: Border.all(
-                                  color: Colors.white,
-                                )),
-                            //ClipRRect for image border radius
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(15),
-                              child: Image.asset(
-                                imageList[i],
-                                width: 500,
-                                fit: BoxFit.fill,
+                    Stack(
+                      children: [
+                        CarouselSlider.builder(
+                          itemCount: imageList.length,
+                          options: CarouselOptions(
+                              enableInfiniteScroll: false,
+                              viewportFraction: 1,
+                              enlargeCenterPage: true,
+                              height: getProportionateScreenHeight(200),
+                              // reverse: true,
+                              aspectRatio: 0.5,
+                              onPageChanged: (index, reason) {
+                                setState(() {
+                                  activeIndex = index;
+                                });
+                              }),
+                          itemBuilder: (context, i, id) {
+                            //for onTap to redirect to another screen
+                            return GestureDetector(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                //ClipRRect for image border radius
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.asset(
+                                    imageList[i],
+                                    width: getProportionateScreenWidth(500),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                          onTap: () {
-                            //
+                              onTap: () {
+                                //
+                              },
+                            );
                           },
-                        );
-                      },
+                        ),
+                        Positioned(
+                          child: buildIndicator(),
+                          bottom: 10,
+                          left: 140,
+                        ),
+                      ],
                     ),
-                      Positioned(child: buildIndicator(),bottom: 10,left: 140,),
-                    ],),
                   ],
                 ),
               ),
@@ -91,19 +98,15 @@ class _bodyState extends State<body> {
               // Padding(
               //     padding: EdgeInsets.only(top: 10, bottom: 10, left: 10),),
               Container(
+                margin: EdgeInsets.only(top: getProportionateScreenHeight(16)),
+                padding:
+                    EdgeInsets.only(right: getProportionateScreenWidth(16)),
                 alignment: Alignment.bottomRight,
-                padding: EdgeInsets.only(right: 20),
-                child: Text(
-                  'العقارات',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                      fontSize: 25,
-                      /* fontFamily: 'RobotoMono'*/
-                      fontWeight: FontWeight.bold),
-                ),
+                child: Text('العقارات',
+                    textAlign: TextAlign.start, style: headingHome),
               ),
               Container(
-                margin: EdgeInsets.only(right: 20),
+                margin: EdgeInsets.only(right: getProportionateScreenWidth(16)),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -111,27 +114,28 @@ class _bodyState extends State<body> {
                       Column(
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: 20),
+                            margin: EdgeInsets.only(
+                                left: getProportionateScreenWidth(16)),
                             child: MaterialButton(
                               onPressed: () {},
-                              color: Color(0xffFFEDA6),
-                              height: 70,
-                              minWidth: 40,
+                              color: kPrimaryLightColor,
+                              height: getProportionateScreenHeight(64),
+                              minWidth: getProportionateScreenWidth(64),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Icon(
                                 Icons.home,
-                                color: Color(0xff2B2B2B),
+                                color: kTextColor,
                                 size: 30,
                               ),
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: 20),
+                            margin: EdgeInsets.only(
+                                left: getProportionateScreenWidth(16)),
                             child: Text(
                               "شقة",
-                              style: TextStyle(fontSize: 18),
                             ),
                           )
                         ],
@@ -139,27 +143,28 @@ class _bodyState extends State<body> {
                       Column(
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: 20),
+                            margin: EdgeInsets.only(
+                                left: getProportionateScreenWidth(16)),
                             child: MaterialButton(
                               onPressed: () {},
-                              color: Color(0xffFFEDA6),
-                              height: 70,
-                              minWidth: 40,
+                              color: kPrimaryLightColor,
+                              height: getProportionateScreenHeight(64),
+                              minWidth: getProportionateScreenWidth(64),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Icon(
                                 Icons.home,
-                                color: Color(0xff2B2B2B),
+                                color: kTextColor,
                                 size: 30,
                               ),
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: 20),
+                            margin: EdgeInsets.only(
+                                left: getProportionateScreenWidth(16)),
                             child: Text(
                               "شقة",
-                              style: TextStyle(fontSize: 18),
                             ),
                           )
                         ],
@@ -171,28 +176,27 @@ class _bodyState extends State<body> {
             ],
           ),
           Container(
-            padding: EdgeInsets.only( right: 20),
+            margin:
+                EdgeInsets.only(top: getProportionateScreenHeight(16),bottom: getProportionateScreenHeight(16)),
+            padding: EdgeInsets.only(right: getProportionateScreenWidth(16)),
             alignment: Alignment.bottomRight,
-            child: Text(
-              "التسجيل على رحلة  ",
-              textAlign: TextAlign.start,
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-            ),
+            child: Text("التسجيل على رحلة  ",
+                textAlign: TextAlign.start, style: headingHome),
           ),
           Container(
-            margin: EdgeInsets.only(left: 20,right: 20),
-            decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black12,
-                      spreadRadius: 0.5,
-                      blurRadius: 15,
-                      offset: Offset(0, 2) // changes position of shadow
-                  )]),
+            margin: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenWidth(16)),
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                offset: Offset(0, 0),
+                blurRadius: 10,
+                color: kShadowColor, // changes position of shadow
+                  )
+            ]),
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                primary: Colors.white,
+                primary: kTextWhite,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
@@ -202,10 +206,9 @@ class _bodyState extends State<body> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      padding: EdgeInsets.only(left: 20),
                       alignment: Alignment.centerRight,
-                      height: 120,
-                      width: 150,
+                      height: getProportionateScreenHeight(112),
+                      width: getProportionateScreenWidth(136),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.network(
@@ -213,27 +216,20 @@ class _bodyState extends State<body> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 45),
+                      margin: EdgeInsets.only(
+                          left: getProportionateScreenWidth(40)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "تسجيل على رحلة",
                             textAlign: TextAlign.right,
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Color(0xff2B2B2B),
-                            ),
+                            style: primaryText,
                           ),
                           Text(
                             "ذهاب واياب  ",
                             textAlign: TextAlign.right,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.normal,
-                              fontSize: 16,
-                              color: Color(0xff2B2B2B),
-                            ),
+                            style: primaryText,
                           ),
                         ],
                       ),
@@ -241,7 +237,7 @@ class _bodyState extends State<body> {
                     Icon(
                       Icons.arrow_forward_ios_outlined,
                       size: 20,
-                      color: Colors.black,
+                      color: kTextColor,
                     ),
                   ],
                 ),
@@ -249,50 +245,41 @@ class _bodyState extends State<body> {
             ),
           ),
           Container(
-            width: double.infinity,
-            padding: EdgeInsets.only(right: 20),
+            margin:
+            EdgeInsets.only(top: getProportionateScreenHeight(16)),
+            padding: EdgeInsets.only(right: getProportionateScreenWidth(16) ),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'آخرالعقارات',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  ),
+                  Text('آخرالعقارات',
+                      textAlign: TextAlign.start, style: headingHome),
                   TextButton(
                     onPressed: () {},
                     child: Text(
                       'الكل',
                       style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.yellow,
+                          fontSize: getProportionateScreenWidth(18),
+                          color: kPrimaryColor,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                 ]),
           ),
           Container(
-            height: 130,
-            margin: EdgeInsets.only(left: 20),
-            decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black12,
-                      spreadRadius: 0.9,
-                      blurRadius: 50,
-                      offset: Offset(0, 0) // changes position of shadow
-                  )]),
+            height: getProportionateScreenHeight(120),
+            margin: EdgeInsets.only(left: getProportionateScreenWidth(16)),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
                   Container(
-                    height: 125,
-                    padding: EdgeInsets.only(right: 20),
+                    height: getProportionateScreenHeight(112),
+                    padding:
+                        EdgeInsets.only(right: getProportionateScreenWidth(16)),
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
+                        primary: kTextWhite,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
@@ -302,8 +289,8 @@ class _bodyState extends State<body> {
                           Container(
                             //padding: EdgeInsets.only(left: 20),
                             alignment: Alignment.centerLeft,
-                            height: 120,
-                            width: 150,
+                            height: getProportionateScreenHeight(104),
+                            width: getProportionateScreenWidth(144),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: Image.network(
@@ -314,36 +301,35 @@ class _bodyState extends State<body> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                margin:
-                                EdgeInsets.only(left: 10, right: 10),
+                                margin: EdgeInsets.only(
+                                    right: getProportionateScreenWidth(8),
+                                    top: getProportionateScreenHeight(8)),
                                 child: Text(
                                   "شقة للأجار",
                                   textAlign: TextAlign.right,
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Color(0xff2B2B2B),
-                                  ),
+                                  style: primaryText,
                                 ),
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Container(
-                                    margin: EdgeInsets.only(left: 5,right: 10),
-                                    color:Colors.yellowAccent[100],
-                                    child: Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
+                                    margin: EdgeInsets.only(left: 5, right: 10),
+                                    padding: EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: kPrimaryLightColor,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      "assets/icons/bed.svg",
+                                      color: kTextColor,
+                                      width: 12,
                                     ),
                                   ),
                                   Text(
                                     " 4 غرف",
                                     textAlign: TextAlign.right,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Color(0xff2B2B2B),
-                                    ),
+                                    style: TextStyle(color: kTextColor),
                                   ),
                                 ],
                               ),
@@ -351,109 +337,22 @@ class _bodyState extends State<body> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Container(
-                                    margin: EdgeInsets.only(left: 5,right: 10),
-                                    color:Colors.yellowAccent[100],
-                                    child: Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
+                                    margin: EdgeInsets.only(left: 5, right: 10),
+                                    padding: EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: kPrimaryLightColor,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      "assets/icons/area.svg",
+                                      color: kTextColor,
+                                      width: 12,
                                     ),
                                   ),
                                   Text(
                                     " 125 متر",
                                     textAlign: TextAlign.right,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Color(0xff2B2B2B),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),Container(
-                    height: 125,
-                    padding: EdgeInsets.only(right: 20),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            //padding: EdgeInsets.only(left: 20),
-                            alignment: Alignment.centerLeft,
-                            height: 120,
-                            width: 150,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.network(
-                                  'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'),
-                            ),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin:
-                                EdgeInsets.only(left: 10, right: 10),
-                                child: Text(
-                                  "شقة للأجار",
-                                  textAlign: TextAlign.right,
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Color(0xff2B2B2B),
-                                  ),
-                                ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(left: 5,right: 10),
-                                    color:Colors.yellowAccent[100],
-                                    child: Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
-                                    ),
-                                  ),
-                                  Text(
-                                    " 4 غرف",
-                                    textAlign: TextAlign.right,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Color(0xff2B2B2B),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(left: 5,right: 10),
-                                    color:Colors.yellowAccent[100],
-                                    child: Icon(
-                                      Icons.room_outlined,
-                                      color: Colors.black,
-                                      size: 20,
-                                    ),
-                                  ),
-                                  Text(
-                                    " 125 متر",
-                                    textAlign: TextAlign.right,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Color(0xff2B2B2B),
-                                    ),
+                                    style: TextStyle(color: kTextColor),
                                   ),
                                 ],
                               )
@@ -472,101 +371,37 @@ class _bodyState extends State<body> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.only(right: 20),
-                child:
-                  Text(
-                    " عملائنا",
-                    textAlign: TextAlign.right,
-                    style:
-                        TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                  ),
+                margin:
+                EdgeInsets.only(top: getProportionateScreenHeight(16)),
+                padding: EdgeInsets.only(right: getProportionateScreenWidth(16)),
+                child: Text(" عملائنا",
+                    textAlign: TextAlign.right, style: headingHome),
               ),
               Container(
-                height: 130,
-                margin: EdgeInsets.only(bottom: 20,left: 20,right: 20),
+                height: getProportionateScreenHeight(120),
+                margin: EdgeInsets.symmetric( horizontal: 16),
                 child: SingleChildScrollView(
                   child: Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(8),
                         margin: EdgeInsets.symmetric(horizontal: 10),
-                        width: 120,
-                        height: 120,
+                        width: getProportionateScreenWidth(80),
+                        height: getProportionateScreenHeight(80),
                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 1, color: Colors.white),
-                          borderRadius: BorderRadius.circular(20),
+                          color: kTextWhite,
+                          borderRadius: BorderRadius.circular(16),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black12,
-                              spreadRadius: 0.3,
-                              blurRadius: 5,
-                              offset: Offset(-1, 5), // changes position of shadow
+                              offset: Offset(0, 0),
+                              blurRadius: 10,
+                              color: kShadowColor,// changes position of shadow
                             ),
                           ],
                         ),
-                        child: SvgPicture.asset("assets/icons/Heart Icon.svg"),
-                ),
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        width: 120,
-                        height: 120,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 1, color: Colors.white),
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black12,
-                              spreadRadius: 0.3,
-                              blurRadius: 5,
-                              offset: Offset(-1, 5), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: SvgPicture.asset("assets/icons/Heart Icon.svg"),
+                        child: SvgPicture.asset("assets/icons/Heart Icon.svg", width: 56),
                       ),
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        width: 120,
-                        height: 120,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 1, color: Colors.white),
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black12,
-                              spreadRadius: 0.3,
-                              blurRadius: 5,
-                              offset: Offset(-1, 5), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: SvgPicture.asset("assets/icons/Heart Icon.svg"),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        width: 120,
-                        height: 120,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 1, color: Colors.white),
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black12,
-                              spreadRadius: 0.3,
-                              blurRadius: 5,
-                              offset: Offset(-1, 5), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: SvgPicture.asset("assets/icons/Heart Icon.svg"),
-                      ),
+
                     ],
                   ),
                   scrollDirection: Axis.horizontal,

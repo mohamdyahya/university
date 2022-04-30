@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:university/size_config.dart';
 
-const kShadowColor = Color(0xFFE6E6E6);
+const kShadowColor = Color(0xD9E6E6E6);
 const kPrimaryColor = Color(0xFFFFCC00);
 const kPrimaryLightColor = Color(0xFFFFEDA6);
 const kPrimaryGradientColor = LinearGradient(
@@ -31,9 +31,16 @@ final headingStyleSecond = TextStyle(
   height: 1.5,
 );
 
+final headingHome = TextStyle(
+  fontSize: getProportionateScreenWidth(20),
+  fontWeight: FontWeight.bold,
+  color: kTextColor,
+  height: 1.5,
+);
+
+
 final primaryText = TextStyle(
   fontSize: getProportionateScreenWidth(18),
-  fontWeight: FontWeight.bold,
   color: kTextColor,
   height: 1.5,
 );
