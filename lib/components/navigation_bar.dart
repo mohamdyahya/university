@@ -19,7 +19,6 @@ class _NavigationState extends State<Navigation> {
   final screens = [
     Main_Page(),
     AllRegister(),
-    Reservation(),
     NotificationScrean(),
     MyReservations(),
     MyUser(),
