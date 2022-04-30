@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:university/constants.dart';
 import 'package:university/routes.dart';
+import 'package:university/screans/Poropert_information/property.dart';
 import 'package:university/screans/app_about/app_info_screen.dart';
 import 'package:university/screans/my_user/my_user_screen.dart';
 import 'package:university/screans/notification/notification_screen.dart';
@@ -14,6 +15,7 @@ import 'components/navigation_bar.dart';
 void main() {
   runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -35,10 +37,10 @@ class MyApp extends StatelessWidget {
           bodyText1: TextStyle(color: kTextColor),
           bodyText2: TextStyle(color: kTextColor),
         ),
-        //hello i am thunder and wellcom to my project  
+        //hello i am thunder and wellcom to my project
 
         // This is the theme of your application.
-        // 
+        //
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
         // changing the primarySwatch below to Colors.green and then invoke
@@ -49,7 +51,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-       home: AllRegister(),
+       home: Test(),
    //   initialRoute: MyReservations.routeName,
   //    routes: routes,
     );

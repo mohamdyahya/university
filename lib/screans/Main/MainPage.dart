@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import '../../size_config.dart';
 import 'Components/body.dart';
 
 // class MyApp extends StatefulWidget {
@@ -28,6 +29,7 @@ class _Main_PageState extends State<Main_Page> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: body());

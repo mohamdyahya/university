@@ -7,6 +7,7 @@ import '../screans/my_user/my_user_screen.dart';
 import '../screans/notification/notification_screen.dart';
 import '../screans/register/res.dart';
 import '../screans/reservations/my_reservations_screen.dart';
+import '../screans/register_all/resgister_all_screen.dart';
 
 class Navigation extends StatefulWidget {
   @override
@@ -17,9 +18,10 @@ class _NavigationState extends State<Navigation> {
   int index = 0;
   final screens = [
     Main_Page(),
+    AllRegister(),
     Reservation(),
     NotificationScrean(),
-    AppInfoScrean(),
+    MyReservations(),
     MyUser(),
   ];
 
