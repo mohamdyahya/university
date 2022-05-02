@@ -12,9 +12,8 @@ class Body extends StatelessWidget {
       child: ListView(scrollDirection: Axis.vertical, children: [
         InkWell(
           child: Container(
-            height: getProportionateScreenHeight(130),
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(top: 16,left: 16,right: 16),
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: kTextWhite,
@@ -54,9 +53,8 @@ class Body extends StatelessWidget {
         ),
         InkWell(
           child: Container(
-            height: getProportionateScreenHeight(130),
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(top: 16,left: 16,right: 16),
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: kTextWhite,
@@ -96,9 +94,8 @@ class Body extends StatelessWidget {
         ),
         InkWell(
           child: Container(
-            height: getProportionateScreenHeight(130),
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(top: 16,left: 16,right: 16),
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: kTextWhite,
@@ -138,9 +135,8 @@ class Body extends StatelessWidget {
         ),
         InkWell(
           child: Container(
-            height: getProportionateScreenHeight(130),
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(top: 16,left: 16,right: 16),
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: kTextWhite,
@@ -180,9 +176,8 @@ class Body extends StatelessWidget {
         ),
         InkWell(
           child: Container(
-            height: getProportionateScreenHeight(130),
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(top: 16,left: 16,right: 16),
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: kTextWhite,

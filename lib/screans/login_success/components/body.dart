@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:university/components/navigation_bar.dart';
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -32,7 +33,10 @@ class Body extends StatelessWidget {
             child: DefaultButton(
               text: "الصفحة الرئيسية",
               press: () {
-            //    Navigator.pushNamed(context, HomeScreen.routeName);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Navigation()),
+                );
               },
             ),
           ),

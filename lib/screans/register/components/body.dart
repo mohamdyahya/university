@@ -1,6 +1,12 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../components/custom_surfix_icon.dart';
+import '../../../components/default_button.dart';
+import '../../../constants.dart';
+import '../../../size_config.dart';
+import '../../reservations/my_reservations_screen.dart';
+
 class Body extends StatefulWidget {
 
   @override
@@ -14,6 +20,26 @@ class NewObject {
 
 
 class _BodyState extends State<Body> {
+
+  final _formKey = GlobalKey<FormState>();
+  String name;
+  bool remember = false;
+  final List<String> errors = [];
+
+  void addError({String error}) {
+    if (!errors.contains(error))
+      setState(() {
+        errors.add(error);
+      });
+  }
+
+  void removeError({String error}) {
+    if (errors.contains(error))
+      setState(() {
+        errors.remove(error);
+      });
+  }
+
   Color color1 = Colors.black;
   Color color2 = Colors.black;
   static final List<NewObject> items = <NewObject>[
@@ -44,6 +70,7 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+        key: _formKey,
         body:Container(
           color: Colors.white,
           padding: EdgeInsets.only(top: 40),
@@ -52,71 +79,15 @@ class _BodyState extends State<Body> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: 400,
-                      height: 50,
-                      margin: EdgeInsets.only(bottom: 20,right: 20,left: 20,top: 45),
-                      // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Colors.white,
-                        border: Border.all(color: Colors.black38),
-                      ),
-                      child: TextField(
-                        // strutStyle: ,
-                        maxLines: 1,
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.white,
-                            ),
-                            borderRadius: BorderRadius.circular(1.0),
-                          ),
-                          hintText: "قم بأدخال اسمك",
-                        ),
-                        autofocus: false,
-                      ),
-                    ),
-                    Positioned(
-                      top: 20.0,
-                      left: 20.0,
-                      right: 40.0,
-                      child: Row(
-                        children: <Widget>[
-                          Flexible(
-                            child: Container(
-                              // padding: EdgeInsets.symmetric(
-                              //   horizontal: 2.0,
-                              // ),
-                              decoration:  BoxDecoration(
-                                // border: InputBorder.none,
-                                color: Colors.white,
-                              ),
-                              child: Text(
-                                'الاسم',
-                                style: TextStyle(
-                                    color: Colors.black45,
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                buildNameFormField(),
+                SizedBox(height: getProportionateScreenHeight(20)),
                 Container(
                     width: double.infinity,
-                    margin: EdgeInsets.all(20),
-                    // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black38),
+                      borderRadius: BorderRadius.circular(20),
+                      color: kTextWhite,
+                      border: Border.all(color: kTextGray),
                     ),
                     child:  DropdownButtonHideUnderline(
                       child: DropdownButton<NewObject>(
@@ -130,8 +101,7 @@ class _BodyState extends State<Body> {
                               Text(
                                 item.title,
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                                  fontSize: getProportionateScreenWidth(16),
                                 ),
                               ),
                             ],
@@ -147,14 +117,14 @@ class _BodyState extends State<Body> {
                       ),
                     )
                 ),
+                SizedBox(height: getProportionateScreenHeight(20)),
                 Container(
                     width: double.infinity,
-                    margin: EdgeInsets.all(20),
-                    // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black38),
+                      borderRadius: BorderRadius.circular(20),
+                      color: kTextWhite,
+                      border: Border.all(color: kTextGray),
                     ),
                     child:  DropdownButtonHideUnderline(
                       child: DropdownButton<NewObject>(
@@ -168,8 +138,8 @@ class _BodyState extends State<Body> {
                               Text(
                                 item1.title,
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                                  fontSize: getProportionateScreenWidth(16),
+
                                 ),
                               ),
                             ],
@@ -185,14 +155,14 @@ class _BodyState extends State<Body> {
                       ),
                     )
                 ),
+                SizedBox(height: getProportionateScreenHeight(20)),
                 Container(
                     width: double.infinity,
-                    margin: EdgeInsets.all(20),
-                    // padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black38),
+                      borderRadius: BorderRadius.circular(20),
+                      color: kTextWhite,
+                      border: Border.all(color: kTextGray),
                     ),
                     child:  DropdownButtonHideUnderline(
                       child: DropdownButton<NewObject>(
@@ -206,8 +176,8 @@ class _BodyState extends State<Body> {
                               Text(
                                 item1.title,
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                                  fontSize: getProportionateScreenWidth(16),
+
                                 ),
                               ),
                             ],
@@ -223,6 +193,7 @@ class _BodyState extends State<Body> {
                       ),
                     )
                 ),
+                SizedBox(height: getProportionateScreenHeight(16)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -255,19 +226,16 @@ class _BodyState extends State<Body> {
                     ),
                   ],
                 ),
-
-
-
-                Container(
-                  height: 50,
-                  width: 250,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.yellowAccent[400],
-                    border: Border.all(color: Colors.black38),
-                  ),
-                  child: Center(child: Text("التسجيل على رحلة ",style: TextStyle(fontSize: 20),)),
-                )
+                SizedBox(height: getProportionateScreenHeight(24)),
+                DefaultButton(
+                  text: "التسجيل على رحلة",
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyReservations()),
+                    );
+                  },
+                ),
 
               ],
             ),
@@ -276,4 +244,41 @@ class _BodyState extends State<Body> {
         )
     );
   }
+
+  TextFormField buildNameFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.name,
+      onSaved: (newValue) => name = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kPassNullError);
+        }
+        name = value;
+      },
+      validator: (value) {
+        if (value.isEmpty) {
+          addError(error: kPassNullError);
+          return "";
+        } else if ((name != value)) {
+          addError(error: kMatchPassError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "الاسم",
+        hintText: "أدخل الاسم هنا",
+        labelStyle: TextStyle(color: kTextColor),
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        // floatingLabelBehavior: FloatingLabelBehavior.always,
+        prefixIcon: CustomSurffixIcon(svgIcon: "assets/icons/user.svg"),
+        border: outlineInputBorder(),
+        enabledBorder: outlineInputBorder(),
+        focusedBorder: outlineInputBorder(),
+        contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 10),
+      ),
+    );
+  }
+
 }

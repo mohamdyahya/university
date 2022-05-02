@@ -73,7 +73,7 @@ class _bodyState extends State<body> {
                                   borderRadius: BorderRadius.circular(15),
                                   child: Image.asset(
                                     imageList[i],
-                                    width: getProportionateScreenWidth(500),
+                                    width: double.infinity,
                                     fit: BoxFit.fill,
                                   ),
                                 ),
@@ -98,7 +98,7 @@ class _bodyState extends State<body> {
               // Padding(
               //     padding: EdgeInsets.only(top: 10, bottom: 10, left: 10),),
               Container(
-                margin: EdgeInsets.only(top: getProportionateScreenHeight(16)),
+                margin: EdgeInsets.only(top: getProportionateScreenHeight(16),bottom: getProportionateScreenHeight(8)),
                 padding:
                     EdgeInsets.only(right: getProportionateScreenWidth(16)),
                 alignment: Alignment.bottomRight,
@@ -114,20 +114,20 @@ class _bodyState extends State<body> {
                       Column(
                         children: [
                           Container(
+                            height: getProportionateScreenHeight(56),
+                            width: getProportionateScreenWidth(56),
                             margin: EdgeInsets.only(
                                 left: getProportionateScreenWidth(16)),
                             child: MaterialButton(
                               onPressed: () {},
                               color: kPrimaryLightColor,
-                              height: getProportionateScreenHeight(64),
-                              minWidth: getProportionateScreenWidth(64),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Icon(
-                                Icons.home,
-                                color: kTextColor,
-                                size: 30,
+                              child: Image.network(
+                              'https://www.freeiconspng.com/uploads/apartment-icon-10.png',
+                                width: getProportionateScreenWidth(56),
+                                height: getProportionateScreenHeight(56),
                               ),
                             ),
                           ),
@@ -143,20 +143,107 @@ class _bodyState extends State<body> {
                       Column(
                         children: [
                           Container(
+                            height: getProportionateScreenHeight(56),
+                            width: getProportionateScreenWidth(56),
                             margin: EdgeInsets.only(
                                 left: getProportionateScreenWidth(16)),
                             child: MaterialButton(
                               onPressed: () {},
                               color: kPrimaryLightColor,
-                              height: getProportionateScreenHeight(64),
-                              minWidth: getProportionateScreenWidth(64),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Icon(
-                                Icons.home,
-                                color: kTextColor,
-                                size: 30,
+                              child: Image.network(
+                                'https://www.freeiconspng.com/uploads/apartment-icon-10.png',
+                                width: getProportionateScreenWidth(56),
+                                height: getProportionateScreenHeight(56),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(
+                                left: getProportionateScreenWidth(16)),
+                            child: Text(
+                              "شقة",
+                            ),
+                          )
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height: getProportionateScreenHeight(56),
+                            width: getProportionateScreenWidth(56),
+                            margin: EdgeInsets.only(
+                                left: getProportionateScreenWidth(16)),
+                            child: MaterialButton(
+                              onPressed: () {},
+                              color: kPrimaryLightColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Image.network(
+                                'https://www.freeiconspng.com/uploads/apartment-icon-10.png',
+                                width: getProportionateScreenWidth(56),
+                                height: getProportionateScreenHeight(56),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(
+                                left: getProportionateScreenWidth(16)),
+                            child: Text(
+                              "شقة",
+                            ),
+                          )
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height: getProportionateScreenHeight(56),
+                            width: getProportionateScreenWidth(56),
+                            margin: EdgeInsets.only(
+                                left: getProportionateScreenWidth(16)),
+                            child: MaterialButton(
+                              onPressed: () {},
+                              color: kPrimaryLightColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Image.network(
+                                'https://www.freeiconspng.com/uploads/apartment-icon-10.png',
+                                width: getProportionateScreenWidth(56),
+                                height: getProportionateScreenHeight(56),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(
+                                left: getProportionateScreenWidth(16)),
+                            child: Text(
+                              "شقة",
+                            ),
+                          )
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height: getProportionateScreenHeight(56),
+                            width: getProportionateScreenWidth(56),
+                            margin: EdgeInsets.only(
+                                left: getProportionateScreenWidth(16)),
+                            child: MaterialButton(
+                              onPressed: () {},
+                              color: kPrimaryLightColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Image.network(
+                                'https://www.freeiconspng.com/uploads/apartment-icon-10.png',
+                                width: getProportionateScreenWidth(56),
+                                height: getProportionateScreenHeight(56),
                               ),
                             ),
                           ),
@@ -186,19 +273,12 @@ class _bodyState extends State<body> {
           Container(
             margin: EdgeInsets.symmetric(
                 horizontal: getProportionateScreenWidth(16)),
-            decoration: BoxDecoration(boxShadow: [
-              BoxShadow(
-                offset: Offset(0, 0),
-                blurRadius: 10,
-                color: kShadowColor, // changes position of shadow
-                  )
-            ]),
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 primary: kTextWhite,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(24),
                 ),
               ),
               child: Container(
@@ -267,7 +347,7 @@ class _bodyState extends State<body> {
           ),
           Container(
             height: getProportionateScreenHeight(120),
-            margin: EdgeInsets.only(left: getProportionateScreenWidth(16)),
+            margin: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(8)),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -275,26 +355,28 @@ class _bodyState extends State<body> {
                   Container(
                     height: getProportionateScreenHeight(112),
                     padding:
-                        EdgeInsets.only(right: getProportionateScreenWidth(16)),
+                        EdgeInsets.only(left: getProportionateScreenWidth(8),right: getProportionateScreenWidth(8)),
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         primary: kTextWhite,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(24),
                         ),
                       ),
                       child: Row(
                         children: [
                           Container(
                             //padding: EdgeInsets.only(left: 20),
-                            alignment: Alignment.centerLeft,
+                            alignment: Alignment.centerRight,
                             height: getProportionateScreenHeight(104),
                             width: getProportionateScreenWidth(144),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: Image.network(
-                                  'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'),
+                                  "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                              ),
+
                             ),
                           ),
                           Column(
@@ -362,6 +444,99 @@ class _bodyState extends State<body> {
                       ),
                     ),
                   ),
+                  Container(
+                    height: getProportionateScreenHeight(112),
+                    padding:
+                    EdgeInsets.only(left: getProportionateScreenWidth(8),right: getProportionateScreenWidth(8)),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        primary: kTextWhite,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24),
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            //padding: EdgeInsets.only(left: 20),
+                            alignment: Alignment.centerRight,
+                            height: getProportionateScreenHeight(104),
+                            width: getProportionateScreenWidth(144),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.network(
+                                  "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                              ),
+
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(
+                                    right: getProportionateScreenWidth(8),
+                                    top: getProportionateScreenHeight(8)),
+                                child: Text(
+                                  "شقة للأجار",
+                                  textAlign: TextAlign.right,
+                                  style: primaryText,
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(left: 5, right: 10),
+                                    padding: EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: kPrimaryLightColor,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      "assets/icons/bed.svg",
+                                      color: kTextColor,
+                                      width: 12,
+                                    ),
+                                  ),
+                                  Text(
+                                    " 4 غرف",
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(color: kTextColor),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(left: 5, right: 10),
+                                    padding: EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: kPrimaryLightColor,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      "assets/icons/area.svg",
+                                      color: kTextColor,
+                                      width: 12,
+                                    ),
+                                  ),
+                                  Text(
+                                    " 125 متر",
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(color: kTextColor),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
                 ],
               ),
             ),
@@ -383,23 +558,85 @@ class _bodyState extends State<body> {
                 child: SingleChildScrollView(
                   child: Row(
                     children: [
-                      Container(
-                        padding: EdgeInsets.all(8),
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        width: getProportionateScreenWidth(80),
-                        height: getProportionateScreenHeight(80),
-                        decoration: BoxDecoration(
-                          color: kTextWhite,
-                          borderRadius: BorderRadius.circular(16),
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(0, 0),
-                              blurRadius: 10,
-                              color: kShadowColor,// changes position of shadow
-                            ),
-                          ],
+                      InkWell(
+                        child: Container(
+                          padding: EdgeInsets.all(8),
+                          margin: EdgeInsets.symmetric(horizontal: 10),
+                          width: getProportionateScreenWidth(80),
+                          height: getProportionateScreenHeight(80),
+                          decoration: BoxDecoration(
+                            color: kTextWhite,
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                blurRadius: 10,
+                                color: kShadowColor,// changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Image.network("https://shmector.com/_ph/13/188552034.png", width: 56),
                         ),
-                        child: SvgPicture.asset("assets/icons/Heart Icon.svg", width: 56),
+                      ),
+                      InkWell(
+                        child: Container(
+                          padding: EdgeInsets.all(8),
+                          margin: EdgeInsets.symmetric(horizontal: 10),
+                          width: getProportionateScreenWidth(80),
+                          height: getProportionateScreenHeight(80),
+                          decoration: BoxDecoration(
+                            color: kTextWhite,
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                blurRadius: 10,
+                                color: kShadowColor,// changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Image.network("https://shmector.com/_ph/13/188552034.png", width: 56),
+                        ),
+                      ),
+                      InkWell(
+                        child: Container(
+                          padding: EdgeInsets.all(8),
+                          margin: EdgeInsets.symmetric(horizontal: 10),
+                          width: getProportionateScreenWidth(80),
+                          height: getProportionateScreenHeight(80),
+                          decoration: BoxDecoration(
+                            color: kTextWhite,
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                blurRadius: 10,
+                                color: kShadowColor,// changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Image.network("https://shmector.com/_ph/13/188552034.png", width: 56),
+                        ),
+                      ),
+                      InkWell(
+                        child: Container(
+                          padding: EdgeInsets.all(8),
+                          margin: EdgeInsets.symmetric(horizontal: 10),
+                          width: getProportionateScreenWidth(80),
+                          height: getProportionateScreenHeight(80),
+                          decoration: BoxDecoration(
+                            color: kTextWhite,
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                blurRadius: 10,
+                                color: kShadowColor,// changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Image.network("https://shmector.com/_ph/13/188552034.png", width: 56),
+                        ),
                       ),
 
                     ],

@@ -13,6 +13,8 @@ final List<String> imageList = [
 // Information_Property
 
 class Test extends StatefulWidget {
+  static String routeName = "/test";
+
   @override
   State<Test> createState() => _TestState();
 }
@@ -70,7 +72,7 @@ class _TestState extends State<Test> {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     border: Border.all(width: 1, color: Colors.white),
-                    color: Colors.amber[100],
+                    color: kPrimaryLightColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   width: 130,

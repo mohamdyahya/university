@@ -12,15 +12,13 @@ class Reservation_infrmation_page extends StatefulWidget {
 
 class _Reservation_infrmation_pageState
     extends State<Reservation_infrmation_page> {
-  Color color1 = Colors.black;
-  Color color2 = Colors.black;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
-          padding: EdgeInsets.only(top: 20),
+          padding: EdgeInsets.only(top: 20  , bottom: 0),
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
@@ -30,14 +28,12 @@ class _Reservation_infrmation_pageState
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: kTextWhite,
-                  border: Border.all(width: 1, color: kTextWhite),
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
                       color: kShadowColor,
-                      spreadRadius: 0.3,
-                      blurRadius: 5,
-                      offset: Offset(-1, 5), // changes position of shadow
+                      blurRadius: 10,
+                      offset: Offset(0, 0), // changes position of shadow
                     ),
                   ],
                 ),
@@ -50,8 +46,7 @@ class _Reservation_infrmation_pageState
                         child: Align(
                           child: Text(
                             '50 ليرة تركي',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                            style: headingHome,
                           ),
                           alignment: Alignment.center,
                         ),
@@ -89,14 +84,12 @@ class _Reservation_infrmation_pageState
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: kTextWhite,
-                  border: Border.all(width: 1, color: kTextWhite),
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
                       color: kShadowColor,
-                      spreadRadius: 0.3,
-                      blurRadius: 5,
-                      offset: Offset(-1, 5), // changes position of shadow
+                      blurRadius: 10,
+                      offset: Offset(0, 0), // changes position of shadow
                     ),
                   ],
                 ),
@@ -130,8 +123,7 @@ class _Reservation_infrmation_pageState
                         child: Align(
                           child: Text(
                             '50 ليرة تركي',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                            style: headingHome,
                           ),
                           alignment: Alignment.center,
                         ),
@@ -143,7 +135,7 @@ class _Reservation_infrmation_pageState
               Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 40, top: 30),
+                    margin: EdgeInsets.only(right: 8, top: 32),
                     child: Align(
                       child: Text('أوقات الانطلاق من الغربي إلى الشمالي',
                           style: TextStyle(
@@ -164,22 +156,20 @@ class _Reservation_infrmation_pageState
                                 vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
                               color: kTextWhite,
-                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
                                   color: kShadowColor,
-                                  spreadRadius: 0.3,
-                                  blurRadius: 5,
+                                  blurRadius: 10,
                                   offset: Offset(
-                                      -1, 5), // changes position of shadow
+                                      0, 0), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   )),
                               alignment: Alignment.center,
                             ),
@@ -191,22 +181,20 @@ class _Reservation_infrmation_pageState
                                 vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
                               color: kTextWhite,
-                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
                                   color: kShadowColor,
-                                  spreadRadius: 0.3,
-                                  blurRadius: 5,
+                                  blurRadius: 10,
                                   offset: Offset(
-                                      -1, 5), // changes position of shadow
+                                      0, 0), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   )),
                               alignment: Alignment.center,
                             ),
@@ -218,22 +206,20 @@ class _Reservation_infrmation_pageState
                                 vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
                               color: kTextWhite,
-                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
                                   color: kShadowColor,
-                                  spreadRadius: 0.3,
-                                  blurRadius: 5,
+                                  blurRadius: 10,
                                   offset: Offset(
-                                      -1, 5), // changes position of shadow
+                                      0, 0), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   )),
                               alignment: Alignment.center,
                             ),
@@ -245,22 +231,20 @@ class _Reservation_infrmation_pageState
                                 vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
                               color: kTextWhite,
-                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
                                   color: kShadowColor,
-                                  spreadRadius: 0.3,
-                                  blurRadius: 5,
+                                  blurRadius: 10,
                                   offset: Offset(
-                                      -1, 5), // changes position of shadow
+                                      0, 0), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   )),
                               alignment: Alignment.center,
                             ),
@@ -275,7 +259,7 @@ class _Reservation_infrmation_pageState
               Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 40, top: 30),
+                    margin: EdgeInsets.only(right: 8, top: 32),
                     child: Align(
                       child: Text('أوقات العودة من الغربي إلى الشمالي',
                           style: TextStyle(
@@ -296,22 +280,20 @@ class _Reservation_infrmation_pageState
                                 vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
                               color: kTextWhite,
-                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
                                   color: kShadowColor,
-                                  spreadRadius: 0.3,
-                                  blurRadius: 5,
+                                  blurRadius: 10,
                                   offset: Offset(
-                                      -1, 5), // changes position of shadow
+                                      0, 0), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   )),
                               alignment: Alignment.center,
                             ),
@@ -323,22 +305,20 @@ class _Reservation_infrmation_pageState
                                 vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
                               color: kTextWhite,
-                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
                                   color: kShadowColor,
-                                  spreadRadius: 0.3,
-                                  blurRadius: 5,
+                                  blurRadius: 10,
                                   offset: Offset(
-                                      -1, 5), // changes position of shadow
+                                      0, 0), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   )),
                               alignment: Alignment.center,
                             ),
@@ -350,22 +330,20 @@ class _Reservation_infrmation_pageState
                                 vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
                               color: kTextWhite,
-                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
                                   color: kShadowColor,
-                                  spreadRadius: 0.3,
-                                  blurRadius: 5,
+                                  blurRadius: 10,
                                   offset: Offset(
-                                      -1, 5), // changes position of shadow
+                                      0, 0), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   )),
                               alignment: Alignment.center,
                             ),
@@ -377,22 +355,20 @@ class _Reservation_infrmation_pageState
                                 vertical: 2, horizontal: 8),
                             decoration: BoxDecoration(
                               color: kTextWhite,
-                              border: Border.all(width: 1, color: kTextWhite),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
                                   color: kShadowColor,
-                                  spreadRadius: 0.3,
-                                  blurRadius: 5,
+                                  blurRadius: 10,
                                   offset: Offset(
-                                      -1, 5), // changes position of shadow
+                                      0, 0), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Align(
                               child: Text('6:50',
                                   style: TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 20,
                                   )),
                               alignment: Alignment.center,
                             ),
@@ -404,6 +380,7 @@ class _Reservation_infrmation_pageState
                   ),
                 ],
               ),
+
             ],
           ),
         ),

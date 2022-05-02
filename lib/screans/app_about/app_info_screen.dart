@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:university/constants.dart';
 import '../../components/navigation_bar.dart';
 import '../../size_config.dart';
 import 'components/body.dart';
@@ -12,9 +13,9 @@ class AppInfoScrean extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
         appBar: AppBar(
-          toolbarHeight: 100,
+          toolbarHeight: getProportionateScreenHeight(80),
           centerTitle: true,
-          title:Text("حول التطبيق",style: TextStyle(color: Colors.black87),),
+          title:Text("حول التطبيق",style: TextStyle(color: kTextColor),),
         ),
         body: Directionality(
           // add this
