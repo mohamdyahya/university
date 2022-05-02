@@ -14,11 +14,11 @@ class Body extends StatelessWidget {
           Spacer(flex: 1),
           Container(
             padding: EdgeInsets.all(50),
-            width: 200,
-            height: 200,
+            width: getProportionateScreenWidth(192),
+            height: getProportionateScreenHeight(192),
             decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(50),
+                borderRadius: BorderRadius.circular(40),
                 boxShadow: [
                   BoxShadow(
                     color: kShadowColor,
@@ -29,30 +29,21 @@ class Body extends StatelessWidget {
             child: SvgPicture.asset("assets/icons/logo.svg"),
           ),
           Spacer(flex: 1),
-          Text(
-              "ريحلي حالك",
-              style: headingStyleSecond
-          ),
+          Text("ريحلي حالك", style: headingStyleSecond),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
+            padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(32)),
             child: Text(
               "تطبيق اجتماعي خدمي , يهدف إلى تسهيل عملية البحث عن بيوت ضمن منطقة اعزاز , و بنفس الوقت يساعد على تأمين مواصلات يومية من الريف الغربي إلى الشمالي و بالعكس و بأسعار منافسة  ",
               textAlign: TextAlign.center,
             ),
           ),
           Spacer(),
-
-          Text(
-              "فكرة وبرمجة",
-              style: headingStyleSecond
-          ),
-
+          Text("فكرة وبرمجة", style: headingStyleSecond),
           Text(
             "فريق AHF_YMN",
             textAlign: TextAlign.center,
           ),
           Spacer(flex: 3),
-
         ],
       ),
     ));

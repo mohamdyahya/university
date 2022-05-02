@@ -31,20 +31,20 @@ class _AllRegisterState extends State<AllRegister>
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kTextWhite,
       appBar: AppBar(
-        toolbarHeight: 100,
+        toolbarHeight: getProportionateScreenHeight(80),
         centerTitle: true,
-        title:Text("المواصلات",style: TextStyle(color: Colors.black87),),
+        title:Text("المواصلات",style: TextStyle(color: kTextColor),),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Container(
-            height: MediaQuery.of(context).size.height,
+            height:  SizeConfig.screenHeight*0.75,
             child: Column(
               children: [
-                SizedBox(height: 50),
+                SizedBox(height: getProportionateScreenHeight(24)),
                 Container(
                   // height: 50,
                   width: MediaQuery.of(context).size.height,

@@ -1,10 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:university/screans/app_about/app_info_screen.dart';
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
+import '../../notification/notification_screen.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
+  @override
+  State<Body> createState() => _BodyState();
+}
+class _BodyState extends State<Body> {
+  bool _switchValue=false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -36,7 +44,7 @@ class Body extends StatelessWidget {
                             )),
                       ),
                     ),
-                    radius: getProportionateScreenHeight(88),
+                    radius: getProportionateScreenHeight(96),
                     backgroundImage: NetworkImage(
                         "https://womenss.net/wp-content/uploads/2021/01/8774-2.jpg"),
                   ),
@@ -52,9 +60,17 @@ class Body extends StatelessWidget {
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.05),
               InkWell(
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NotificationScrean()),
+                  );
+                  },
                 child: Row(children: [
                   SvgPicture.asset("assets/icons/bell.svg",
-                      height: 24, width: 24, alignment: Alignment.center),
+                      height: getProportionateScreenHeight(24), width: getProportionateScreenWidth(24), alignment: Alignment.center),
                   Spacer(
                     flex: 1,
                   ),
@@ -63,7 +79,7 @@ class Body extends StatelessWidget {
                     flex: 10,
                   ),
                   SvgPicture.asset("assets/icons/arrow_left.svg",
-                      height: 24, width: 24, alignment: Alignment.center),
+                      height: getProportionateScreenHeight(24), width: getProportionateScreenWidth(24), alignment: Alignment.center),
                 ]),
               ),
               Divider(
@@ -72,6 +88,14 @@ class Body extends StatelessWidget {
                 thickness: 0.5,
               ),
               InkWell(
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AppInfoScrean()),
+                  );
+                },
                 child: Row(children: [
                   SvgPicture.asset("assets/icons/info.svg",
                       height: 24, width: 24, alignment: Alignment.center),
@@ -83,7 +107,7 @@ class Body extends StatelessWidget {
                     flex: 10,
                   ),
                   SvgPicture.asset("assets/icons/arrow_left.svg",
-                      height: 24, width: 24, alignment: Alignment.center),
+                      height: getProportionateScreenHeight(24), width: getProportionateScreenWidth(24), alignment: Alignment.center),
                 ]),
               ),
               Divider(
@@ -94,13 +118,28 @@ class Body extends StatelessWidget {
               InkWell(
                 child: Row(children: [
                   SvgPicture.asset("assets/icons/dark.svg",
-                      height: 24, width: 24, alignment: Alignment.center),
+                      height: getProportionateScreenHeight(24), width: getProportionateScreenWidth(24), alignment: Alignment.center),
                   Spacer(
                     flex: 1,
                   ),
                   Text("الوضع الليلي", style: primaryText),
                   Spacer(
                     flex: 10,
+                  ),
+                  Container(
+                    height: getProportionateScreenHeight(24),
+                    child: Transform.scale(
+                      scale: 0.8,
+                      child: CupertinoSwitch(
+                        value: _switchValue,
+                        activeColor: kPrimaryColor,
+                        onChanged: (value) {
+                          setState(() {
+                            _switchValue = value;
+                          });
+                        },
+                      ),
+                    ),
                   ),
                 ]),
               ),
@@ -110,9 +149,11 @@ class Body extends StatelessWidget {
                 thickness: 0.5,
               ),
               InkWell(
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
                 child: Row(children: [
                   SvgPicture.asset("assets/icons/logout.svg",
-                      height: 24, width: 24, alignment: Alignment.center),
+                      height: getProportionateScreenHeight(24), width: getProportionateScreenWidth(24), alignment: Alignment.center),
                   Spacer(
                     flex: 1,
                   ),

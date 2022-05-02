@@ -20,6 +20,8 @@ import 'Components/body.dart';
 // }
 
 class Main_Page extends StatefulWidget {
+  static String routeName = "/main_page";
+
   @override
   State<Main_Page> createState() => _Main_PageState();
 }

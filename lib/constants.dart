@@ -42,7 +42,12 @@ final headingHome = TextStyle(
 final primaryText = TextStyle(
   fontSize: getProportionateScreenWidth(18),
   color: kTextColor,
-  fontWeight: FontWeight.bold,
+  height: 1.5,
+);
+
+final SmallText = TextStyle(
+  fontSize: getProportionateScreenWidth(12),
+  color: kTextColor,
   height: 1.5,
 );
 

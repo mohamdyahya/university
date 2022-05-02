@@ -22,7 +22,6 @@ class _NavigationState extends State<Navigation> {
     AllRegister(),
     search(),
     NotificationScrean(),
-    MyReservations(),
     MyUser(),
   ];
 

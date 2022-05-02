@@ -15,11 +15,11 @@ class MyUser extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
+        toolbarHeight: getProportionateScreenHeight(80),
         centerTitle: true,
         title: Text(
-          "حسابي",
-          style: TextStyle(color: Colors.black87),
+          "الملف الشخصي",
+          style: TextStyle(color: kTextColor),
         ),
       ),
       body: Directionality(

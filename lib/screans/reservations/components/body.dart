@@ -12,7 +12,8 @@ class Body extends StatelessWidget {
       width: double.infinity,
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          padding:
+              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Column(
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.02),
@@ -20,7 +21,7 @@ class Body extends StatelessWidget {
                 height: getProportionateScreenHeight(300),
                 width: getProportionateScreenWidth(300),
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: kTextWhite,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
@@ -32,7 +33,10 @@ class Body extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(height: SizeConfig.screenHeight * 0.05),
-                    SvgPicture.asset("assets/icons/done.svg", height: getProportionateScreenHeight(160) , width: getProportionateScreenWidth(160) , alignment: Alignment.center),
+                    SvgPicture.asset("assets/icons/done.svg",
+                        height: getProportionateScreenHeight(160),
+                        width: getProportionateScreenWidth(160),
+                        alignment: Alignment.center),
                     SizedBox(height: SizeConfig.screenHeight * 0.02),
                     Text(
                       "تم الحجز بنجاح ",
@@ -40,8 +44,7 @@ class Body extends StatelessWidget {
                     ),
                     Text(
                       "على رحلة يوم غد إلى اعزاز ",
-                      style: TextStyle(
-                          color: kTextColor),
+                      style: TextStyle(color: kTextColor),
                     ),
                   ],
                 ),
@@ -55,9 +58,8 @@ class Body extends StatelessWidget {
                 Spacer(),
                 Text(
                   "سرمدا ",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: kTextColor),
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, color: kTextColor),
                 ),
               ]),
               Divider(
@@ -73,9 +75,8 @@ class Body extends StatelessWidget {
                 Spacer(),
                 Text(
                   "7:30 ",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: kTextColor),
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, color: kTextColor),
                 ),
               ]),
               Divider(
@@ -91,9 +92,8 @@ class Body extends StatelessWidget {
                 Spacer(),
                 Text(
                   "اعزاز ",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: kTextColor),
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, color: kTextColor),
                 ),
               ]),
               Divider(
@@ -109,9 +109,8 @@ class Body extends StatelessWidget {
                 Spacer(),
                 Text(
                   "40 ليرة ",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: kTextColor),
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, color: kTextColor),
                 ),
               ]),
               Divider(
