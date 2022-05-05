@@ -42,7 +42,7 @@ class _bodyState extends State<body> {
             children: [
               Container(
                 margin:
-                    EdgeInsets.only(top: 15, left: 10, right: 10, bottom: 0),
+                    EdgeInsets.only( left: 10, right: 10, bottom: 0),
                 child: Column(
                   children: [
                     Stack(

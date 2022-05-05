@@ -17,11 +17,6 @@ class _searchState extends State<search> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shadowColor: Colors.black,
-        leading: IconButton(
-          icon: Icon(Icons.search),
-        ),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.zoom_out_map))],
       ),
       body: SafeArea(
         child: ListView(
