@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:university/constants.dart';
 import 'package:university/size_config.dart';
+import 'package:map_launcher/map_launcher.dart';
+import 'package:location/location.dart';
 
+import '../../components/default_button.dart';
+
+var latitude = 36.638746;
+var longitude = 36.833688 ;
 final List<String> imageList = [
   "assets/images/2.jpg",
   "assets/images/3.jpg",
@@ -20,6 +26,8 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
+  Location location = Location();
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -190,14 +198,24 @@ class _TestState extends State<Test> {
                   child: Text(
                       "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق يد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع"),
                 ),
+                SizedBox(
+                  height: getProportionateScreenHeight(32),
+                ),
                 Container(
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      'الموقع على الخريطة',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    )),
+                  margin: EdgeInsets.symmetric(horizontal: getProportionateScreenHeight(24)),
+                  child: DefaultButton(
+                    text: "الموقع على الخريطة",
+                    press: () async {
+                      var value = await location.getLocation();
+                      if (await MapLauncher.isMapAvailable(MapType.google)) {
+                        MapLauncher.showMarker(
+                            mapType: MapType.google,
+                            coords: Coords(latitude, longitude),
+                            title: 'title');
+                      }
+                    },
+                  ),
+                ),
               ],
             ),
           ],
