@@ -55,7 +55,7 @@ class _Main_PageState extends State<Main_Page> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(child: Text('صباح الخير',style: TextStyle(color:kTextColor ,fontSize: getProportionateScreenWidth(14),),)),
+              Container(child: Text('صباح الخير 1 ',style: TextStyle(color:kTextColor ,fontSize: getProportionateScreenWidth(14),),)),
               Text('محمد نور',style: TextStyle(color:kTextColor  ,fontSize: getProportionateScreenWidth(14)),),
             ],),
           )
