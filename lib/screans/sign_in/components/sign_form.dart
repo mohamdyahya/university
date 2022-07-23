@@ -1,4 +1,7 @@
 
+import 'package:university/components/progress.dart';
+import 'package:university/screans/sign_in/login_data.dart';
+
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/default_button.dart';
 import '../../../components/form_error.dart';
@@ -8,12 +11,32 @@ import '../../forgot_password/forgot_password_screen.dart';
 import '../../login_success/login_success_screen.dart';
 import 'package:flutter/material.dart';
 
+
+
 class SignForm extends StatefulWidget {
   @override
   _SignFormState createState() => _SignFormState();
 }
 
 class _SignFormState extends State<SignForm> {
+  bool isloading = false;
+  TextEditingController txtpwd = new TextEditingController();
+  TextEditingController txtemail = new TextEditingController();
+  void login (context) async{
+    if (txtpwd.text.isNotEmpty && txtemail.text.isNotEmpty){
+      setState(() {
+        isloading = true;
+      });
+     bool res = await loginUsers(txtemail.text,  txtpwd.text , context);
+     setState(() {
+       isloading = res;
+     });
+    }
+  }
+
+
+
+
   final _formKey = GlobalKey<FormState>();
   String email;
   String password;
@@ -69,13 +92,14 @@ class _SignFormState extends State<SignForm> {
           ),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(20)),
-          DefaultButton(
+          isloading ? circularProgress(): DefaultButton(
             text: "تسجيل الدخول ",
             press: () {
+              login(context);
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
                 // if all are valid then go to success screen
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+               // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginSuccessScreen()));
               }
             },
           ),
@@ -86,6 +110,7 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildPasswordFormField() {
     return TextFormField(
+      controller: txtpwd,
       cursorColor: kTextColor,
       obscureText: true,
       onSaved: (newValue) => password = newValue,
@@ -95,6 +120,7 @@ class _SignFormState extends State<SignForm> {
         } else if (value.length >= 8) {
           removeError(error: kShortPassError);
         }
+
         return null;
       },
       validator: (value) {
@@ -104,6 +130,9 @@ class _SignFormState extends State<SignForm> {
         } else if (value.length < 8) {
           addError(error: kShortPassError);
           return "";
+        }
+        else if (erroremail == true) {
+          addError(error: kInvalidEmailError);
         }
         return null;
       },
@@ -125,6 +154,7 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildEmailFormField() {
     return TextFormField(
+      controller: txtemail,
       cursorColor: kTextColor,
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue,

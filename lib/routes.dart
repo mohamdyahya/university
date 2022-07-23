@@ -12,6 +12,7 @@ import 'package:university/screans/reservations/my_reservations_screen.dart';
 import 'package:university/screans/sign_in/sign_in_screen.dart';
 import 'package:university/screans/sign_up/sign_up_screen.dart';
 import 'package:university/screans/splash/splash_screen.dart';
+import 'package:university/screans/university/uninersity.dart';
 
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
@@ -23,7 +24,8 @@ final Map<String, WidgetBuilder> routes = {
   Main_Page.routeName: (context) => Main_Page(),
   NotificationScrean.routeName: (context) => NotificationScrean(),
   MyReservations.routeName: (context) => MyReservations(),
-  Test.routeName: (context) => Test(),
+  NotificationScrean.routeName: (context) => NotificationScrean(),
+  University.routeName: (context) => University(),
 
 
 

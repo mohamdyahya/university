@@ -71,7 +71,7 @@ class _BodyState extends State<Body> {
                     DefaultButton(
                       text: "التالي",
                       press: () {
-                        Navigator.pushNamed(context, SignInScreen.routeName);
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignInScreen()));
                       },
                     ),
                     Spacer(),

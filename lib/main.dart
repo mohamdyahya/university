@@ -9,6 +9,7 @@ import 'package:university/screans/register_all/resgister_all_screen.dart';
 import 'package:university/screans/reservations/my_reservations_screen.dart';
 import 'package:university/screans/sign_up/sign_up_screen.dart';
 import 'package:university/screans/splash/splash_screen.dart';
+import 'package:university/screans/university/uninersity.dart';
 
 import 'components/navigation_bar.dart';
 
@@ -50,8 +51,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //home: Navigation(),
-      initialRoute: SplashScreen.routeName,
+     // home: Navigation(),
+      initialRoute: University.routeName,
       routes: routes,
     );
   }

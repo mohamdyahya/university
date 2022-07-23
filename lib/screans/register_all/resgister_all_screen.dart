@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../components/custom_surfix_icon.dart';
 import '../../constants.dart';
 import '../../size_config.dart';
-import '../register/res.dart';
+import '../register/components/body.dart';
 import '../reservationinformation/information.dart';
 
 class AllRegister extends StatefulWidget {
@@ -67,10 +67,10 @@ class _AllRegisterState extends State<AllRegister>
                           controller: tabController,
                           tabs: [
                             Tab(
-                              text: 'الأسعار والأوقات',
+                              text: 'التسجيل على رحلة',
                             ),
                             Tab(
-                              text: 'تسجيل على رحلة',
+                              text: 'الأسعار والأوقات',
                             ),
                           ],
                         ),
@@ -82,7 +82,7 @@ class _AllRegisterState extends State<AllRegister>
                   child: TabBarView(
                     controller: tabController,
                     children: [
-                      Reservation(),
+                      MyHomePage(),
                       Reservation_infrmation_page(),
                     ],
                   ),

@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:university/constants.dart';
+import 'package:university/screans/search/search.dart';
+import 'package:http/http.dart' as http;
 import 'package:university/size_config.dart';
 import 'package:map_launcher/map_launcher.dart';
 import 'package:location/location.dart';
-
 import '../../components/default_button.dart';
+import '../../config.dart';
 
 var latitude = 36.638746;
-var longitude = 36.833688 ;
+var longitude = 36.833688;
+
 final List<String> imageList = [
   "assets/images/2.jpg",
   "assets/images/3.jpg",
@@ -19,15 +24,47 @@ final List<String> imageList = [
 // Information_Property
 
 class Test extends StatefulWidget {
-  static String routeName = "/test";
-
   @override
   State<Test> createState() => _TestState();
 }
 
 class _TestState extends State<Test> {
-  Location location = Location();
+  List ListgetPropDet = [];
 
+  Future getPropDet() async {
+    SharedPreferences sh = await SharedPreferences.getInstance();
+    String id = sh.getString(G_use_id);
+    String userToken = sh.getString(G_use_token);
+    var url = path_api +
+        "property/property_info/?id=" +
+        id +
+        "&user_token=" +
+        userToken + "&proprety_id=1";
+    Uri myUri = Uri.parse(url);
+    print("url" + url);
+    http.Response response = await http.get(myUri);
+    if (json.decode(response.body)["Title"] == "Success") {
+      var arr = json.decode(response.body)["Message"];
+      setState(() {
+        ListgetPropDet.addAll(arr);
+      });
+      print(ListgetPropDet);
+      print("success");
+      return true;
+    } else {
+      print("Failer");
+      return false;
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getPropDet();
+  }
+
+
+  Location location = Location();
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -86,7 +123,7 @@ class _TestState extends State<Test> {
                   width: 130,
                   child: Center(
                       child: Text(
-                    'مكتب الرحمن',
+                        'مكتب الرحمن',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   )),
                 ),
@@ -103,7 +140,7 @@ class _TestState extends State<Test> {
                       borderRadius: BorderRadius.circular(16),
                       color: kTextWhite),
                   width: double.infinity,
-                  height: getProportionateScreenHeight(88),
+                  height: getProportionateScreenHeight(96),
                   child: Row(
                     children: [
                       Expanded(
@@ -113,12 +150,12 @@ class _TestState extends State<Test> {
                               padding: EdgeInsets.all(2),
                               alignment: Alignment.topCenter,
                               child: Text(
-                                'عدد الغرف',
+                                'نوع العقار',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ),
                             Container(
-                              child: Text('4'),
+                              child: Text('شقة'),
                             )
                           ],
                         ),
@@ -133,27 +170,7 @@ class _TestState extends State<Test> {
                               padding: EdgeInsets.all(2),
                               alignment: Alignment.topCenter,
                               child: Text(
-                                'المساحة ',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            Container(
-                              child: Text('125'),
-                            )
-                          ],
-                        ),
-                      ),
-                      VerticalDivider(
-                        color: Colors.black,
-                      ),
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(2),
-                              alignment: Alignment.topCenter,
-                              child: Text(
-                                'مدة العقد',
+                                'عدد الغرف ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -173,12 +190,32 @@ class _TestState extends State<Test> {
                               padding: EdgeInsets.all(2),
                               alignment: Alignment.topCenter,
                               child: Text(
-                                'عدد الغرف',
+                                'المساحة',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ),
                             Container(
-                              child: Text('\$' ' 4 '),
+                              child: Text('125'),
+                            )
+                          ],
+                        ),
+                      ),
+                      VerticalDivider(
+                        color: Colors.black,
+                      ),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(2),
+                              alignment: Alignment.topCenter,
+                              child: Text(
+                                'السعر',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              child: Text('125 '),
                             )
                           ],
                         ),
@@ -202,7 +239,8 @@ class _TestState extends State<Test> {
                   height: getProportionateScreenHeight(32),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: getProportionateScreenHeight(24)),
+                  margin: EdgeInsets.symmetric(
+                      horizontal: getProportionateScreenHeight(24)),
                   child: DefaultButton(
                     text: "الموقع على الخريطة",
                     press: () async {
