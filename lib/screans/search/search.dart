@@ -4,11 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:university/config.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../constants.dart';
 import '../../size_config.dart';
 import 'package:http/http.dart' as http;
 import '../Poropert_information/property.dart';
+import 'package:map_launcher/map_launcher.dart';
+import 'package:location/location.dart';
 
 class search extends StatefulWidget {
   static String routeName = "/search";
@@ -82,20 +83,17 @@ class _searchState extends State<search> {
     }
   }
 
-  Future openwhatsapp() async {
-    String whatsapp = "+905340865408";
-    String urlPhone = "whatsapp://send?phone=$whatsapp&text=HelloHisham";
-    await canLaunch(urlPhone) ? launch(urlPhone) : print ("can't open");
-    //await launch('https://wa.me/$whatsapp?text=HelloHisham');
-  }
+
+
   @override
   void initState() {
     super.initState();
     typeClick();
     getPropAll();
     getPropType();
-    openwhatsapp();
   }
+
+  Location location = Location();
 
   @override
   Widget build(BuildContext context) {
@@ -246,34 +244,49 @@ class _searchState extends State<search> {
                                               )),
                                             ),
                                             Spacer(flex: 2),
-                                            InkWell(
-                                              onTap: () async {
-                                                setState(() {
-                                                  // openwhatsapp();
-                                                  print('nnnnnnnnnnn');
-                                                });
-                                              },
-                                              child: Container(
-                                                child: CircleAvatar(
-                                                  radius:
-                                                      getProportionateScreenWidth(
-                                                          20),
-                                                  backgroundColor: kShadowColor,
-                                                  child: IconButton(
-                                                      onPressed: () {
-                                                        setState(() {
-                                                          print('ccccccccc');
-                                                          openwhatsapp();
-                                                        });
-                                                      },
-                                                      icon: SvgPicture.asset(
-                                                        "assets/icons/whatsapp.svg",
-                                                        color: Colors.green,
-                                                        width:
-                                                            getProportionateScreenWidth(
-                                                                20),
-                                                      )),
-                                                ),
+                                            Container(
+                                              child: CircleAvatar(
+                                                radius:
+                                                    getProportionateScreenWidth(
+                                                        20),
+                                                backgroundColor: kShadowColor,
+                                                child: IconButton(
+                                                    onPressed: () async {
+                                                      print('rrrrrrrrrrrr');
+
+                                                      var value = await location
+                                                          .getLocation();
+
+                                                      var lat =
+                                                          '${ListPropAll[i]['latitude']}';
+                                                      var long =
+                                                          '${ListPropAll[i]['longitude']}';
+
+                                                      double lat2 =
+                                                          double.parse(lat);
+                                                      double long2 =
+                                                          double.parse(long);
+
+                                                      print(lat2);
+                                                      print(long2);
+                                                      if (await MapLauncher
+                                                          .isMapAvailable(
+                                                              MapType.google)) {
+                                                        MapLauncher.showMarker(
+                                                            mapType:
+                                                                MapType.google,
+                                                            coords: Coords(
+                                                                lat2, long2),
+                                                            title: 'title');
+                                                      }
+                                                    },
+                                                    icon: SvgPicture.asset(
+                                                      "assets/icons/location.svg",
+                                                      color: Colors.green,
+                                                      width:
+                                                          getProportionateScreenWidth(
+                                                              20),
+                                                    )),
                                               ),
                                             ),
                                             Spacer(flex: 1),
@@ -341,13 +354,13 @@ class _searchState extends State<search> {
                                                     alignment:
                                                         Alignment.topCenter,
                                                     child: Text(
-                                                      'السعر',
+                                                      'النوع',
                                                       style: SmallText,
                                                     ),
                                                   ),
                                                   Container(
                                                     child: Text(
-                                                      '${ListPropAll[i]['price']}',
+                                                      '${ListPropAll[i]['property_types']}',
                                                       style: SmallText,
                                                     ),
                                                   )

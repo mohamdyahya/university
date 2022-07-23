@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:university/constants.dart';
 import 'package:university/routes.dart';
 import 'package:university/screans/Poropert_information/property.dart';
@@ -12,14 +13,20 @@ import 'package:university/screans/splash/splash_screen.dart';
 import 'package:university/screans/university/uninersity.dart';
 
 import 'components/navigation_bar.dart';
+import 'config.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MyApp extends StatefulWidget {
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  // This widget is the root of your application.
+    @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -51,9 +58,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-     // home: Navigation(),
-      initialRoute: University.routeName,
-      routes: routes,
+      home: Navigation(),
+     // initialRoute: University.routeName,
+     // routes: routes,
     );
   }
 }

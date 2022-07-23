@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:university/config.dart';
 import 'package:university/screans/app_about/app_info_screen.dart';
 import 'package:university/screans/sign_in/sign_in_screen.dart';
+import 'package:university/screans/university/uninersity.dart';
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -26,7 +27,27 @@ class _BodyState extends State<Body> {
     sh.remove(G_use_email);
     sh.clear();
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => SignInScreen()));
+        context, MaterialPageRoute(builder: (context) => University()));
+  }
+
+  String nameuser = '';
+  String emailuser = '';
+  Future getNameem() async {
+    SharedPreferences sh = await SharedPreferences.getInstance();
+
+    setState(() {
+      nameuser = sh.getString(G_use_name);
+      emailuser = sh.getString(G_use_email);
+    });
+
+    print(nameuser);
+    print(emailuser);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getNameem();
   }
 
   bool _switchValue=false;
@@ -63,17 +84,17 @@ class _BodyState extends State<Body> {
                     ),
                     radius: getProportionateScreenHeight(96),
                     backgroundImage: NetworkImage(
-                        "https://womenss.net/wp-content/uploads/2021/01/8774-2.jpg"),
+                        'https://b11f.com/img/icon/nour.jpg'),
                   ),
                 ],
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.01),
               Text(
-                "محمد نور بدوي ",
+                nameuser,
                 style: headingStyleSecond,
               ),
               Text(
-                "m.nour.eng@gmail.com ",
+                emailuser,
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.05),
               InkWell(

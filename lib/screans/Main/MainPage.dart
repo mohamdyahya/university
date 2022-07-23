@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../config.dart';
 import '../../constants.dart';
 import '../../size_config.dart';
 import '../notification/notification_screen.dart';
@@ -29,8 +31,30 @@ class Main_Page extends StatefulWidget {
   State<Main_Page> createState() => _Main_PageState();
 }
 
+
+
+
 class _Main_PageState extends State<Main_Page> {
   int selectedindex = 0;
+
+
+   String nameuser = '';
+  Future getName() async {
+    SharedPreferences sh = await SharedPreferences.getInstance();
+    setState(() {
+      nameuser = sh.getString(G_use_name);
+    });
+    print('obsssssssssject');
+    print(nameuser);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getName();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +84,7 @@ class _Main_PageState extends State<Main_Page> {
               child: CircleAvatar(
                 radius: getProportionateScreenHeight(24),
                 backgroundImage: NetworkImage(
-                    'https://womenss.net/wp-content/uploads/2021/01/8774-2.jpg'),
+                    'https://b11f.com/img/icon/nour.jpg'),
               ),
             ),
             title: Container(
@@ -79,7 +103,7 @@ class _Main_PageState extends State<Main_Page> {
                   )),
                   Text(
 
-                    'محمد نور',
+                    nameuser,
                     style: TextStyle(
                         color: kTextColor,
                         fontFamily: 'Helvetica',

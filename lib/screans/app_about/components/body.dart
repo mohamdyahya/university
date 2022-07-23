@@ -31,7 +31,8 @@ class Body extends StatelessWidget {
           Spacer(flex: 1),
           Text("ريحلي حالك", style: headingStyleSecond),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(32)),
+            padding: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenWidth(32)),
             child: Text(
               "تطبيق اجتماعي خدمي , يهدف إلى تسهيل عملية البحث عن بيوت ضمن منطقة اعزاز , و بنفس الوقت يساعد على تأمين مواصلات يومية من الريف الغربي إلى الشمالي و بالعكس و بأسعار منافسة  ",
               textAlign: TextAlign.center,

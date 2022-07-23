@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../components/default_button.dart';
@@ -8,6 +7,10 @@ import '../../../constants.dart';
 import '../../../size_config.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_launch/flutter_launch.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+
 
 class Body extends StatefulWidget {
   @override
@@ -39,11 +42,32 @@ class _BodyState extends State<Body> {
       return false;
     }
   }
+  
+  bool err = false;
+  String msgErr = '';
+  void whatsAppOpen() async {
+    print('pppppppppppppppppppp');
+    bool whatsapp = await FlutterLaunch.hasApp(name: "whatsapp");
+
+    if (whatsapp) {
+      await FlutterLaunch.launchWhatsapp(
+          phone: "05315084595", message: "Hello, flutter_launch");
+    } else {
+      setState(() {
+        err = false;
+        msgErr = '';
+        print('qqqqqqqqqqqqqqqqqq');
+      });
+    }
+  }
+
+
 
   @override
   void initState() {
     super.initState();
     getToRegion();
+    whatsAppOpen();
   }
 
   @override
@@ -74,17 +98,18 @@ class _BodyState extends State<Body> {
                 child: Column(
                   children: [
                     SizedBox(height: SizeConfig.screenHeight * 0.05),
-                    SvgPicture.asset("assets/icons/done.svg",
+                    SvgPicture.asset(
+                        getTripInfolist.isNotEmpty ? "assets/icons/done.svg" : "assets/icons/donet.svg" ,
                         height: getProportionateScreenHeight(160),
                         width: getProportionateScreenWidth(160),
                         alignment: Alignment.center),
                     SizedBox(height: SizeConfig.screenHeight * 0.02),
                     Text(
-                      "تم الحجز بنجاح ",
+                      getTripInfolist.isNotEmpty ? "تم الحجز بنجاح " : "قم بالحجز على رحلة",
                       style: headingStyleSecond,
                     ),
                     Text(
-                      "على رحلة يوم غد  " ,
+                      getTripInfolist.isNotEmpty ? "على رحلة يوم غد " : "اذهب إلى صفحة المواصلات",
                       style: TextStyle(color: kTextColor),
                     ),
                   ],
@@ -181,7 +206,12 @@ class _BodyState extends State<Body> {
               ),
               DefaultButton(
                 text: "للتواصل مع السائق",
-                press: () {},
+                press: () {
+
+                    whatsAppOpen();
+
+
+                },
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.01),
             ],
