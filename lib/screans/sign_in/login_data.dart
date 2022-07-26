@@ -9,6 +9,7 @@ import 'dart:async';
 
 import '../../constants.dart';
 
+
 bool erroremail = false;
 
 Future<bool> loginUsers(
@@ -20,6 +21,7 @@ Future<bool> loginUsers(
       use_pwd +
       "&general_token=" +
       token;
+  print(url);
   Uri myUri = Uri.parse(url);
   http.Response response = await http.get(myUri);
   if (json.decode(response.body)["Title"] == "Login Successful") {
@@ -30,11 +32,11 @@ Future<bool> loginUsers(
     sh.setString(G_use_email, arr["email_address"]);
     sh.setString(G_use_token, arr["user_token"]);
     sh.setString(G_use_image, arr["profile_picture"]);
+    sh.setString(doneEnter, "1");
     print(sh.getString(G_use_id));
     //sh.setString(G_use_mobile, arr["use_mobile"]);
 
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginSuccessScreen()));
-
     print("success");
     return true;
   } else {

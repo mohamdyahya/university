@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:university/config.dart';
 import 'package:university/screans/app_about/app_info_screen.dart';
@@ -25,6 +26,8 @@ class _BodyState extends State<Body> {
     sh.remove(G_use_mobile);
     sh.remove(G_use_image);
     sh.remove(G_use_email);
+    sh.remove(doneEnter);
+
     sh.clear();
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => University()));
