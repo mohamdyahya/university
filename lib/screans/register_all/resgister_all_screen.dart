@@ -82,8 +82,8 @@ class _AllRegisterState extends State<AllRegister>
                   child: TabBarView(
                     controller: tabController,
                     children: [
-                      MyHomePage(),
                       Reservation_infrmation_page(),
+                      Reservation(),
                     ],
                   ),
                 )

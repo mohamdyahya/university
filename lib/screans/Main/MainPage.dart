@@ -87,32 +87,18 @@ class _Main_PageState extends State<Main_Page> {
                     'https://b11f.com/img/icon/nour.jpg'),
               ),
             ),
-            title: Container(
-              // height: getProportionateScreenHeight(70),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                      child: Text(
-                    'أهلًا وسهلًا',
-                    style: TextStyle(
-                      color: kTextColor,
-                      fontSize: getProportionateScreenWidth(12),
-                      fontFamily: 'Helvetica',
-                    ),
-                  )),
-                  Text(
+          ),
+          title: Container(
+            // height: getProportionateScreenHeight(70),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(child: Text('صباح الخير',style: TextStyle(color:kTextColor ,fontSize: getProportionateScreenWidth(14),),)),
+              Text('محمد نور',style: TextStyle(color:kTextColor  ,fontSize: getProportionateScreenWidth(14)),),
+            ],),
+          )
+        ),
 
-                    nameuser,
-                    style: TextStyle(
-                        color: kTextColor,
-                        fontFamily: 'Helvetica',
-                        fontSize: getProportionateScreenWidth(12)),
-
-                  ),
-                ],
-              ),
-            )),
         body: Directionality(
           // add this
           textDirection: TextDirection.rtl, // set this property
