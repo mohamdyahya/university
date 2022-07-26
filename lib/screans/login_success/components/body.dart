@@ -33,10 +33,15 @@ class Body extends StatelessWidget {
             child: DefaultButton(
               text: "الصفحة الرئيسية",
               press: () {
-                Navigator.push(
+
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Navigation()));
+
+                /*
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(builder: (context) => Navigation()),
-                );
+                      (Route<dynamic> route) => false,
+                );*/
               },
             ),
           ),

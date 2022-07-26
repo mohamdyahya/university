@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../config.dart';
 import '../../constants.dart';
 import '../../size_config.dart';
+import '../notification/notification_screen.dart';
 import 'Components/body.dart';
 
 // class MyApp extends StatefulWidget {
@@ -28,26 +31,61 @@ class Main_Page extends StatefulWidget {
   State<Main_Page> createState() => _Main_PageState();
 }
 
+
+
+
 class _Main_PageState extends State<Main_Page> {
   int selectedindex = 0;
+
+
+   String nameuser = '';
+  Future getName() async {
+    SharedPreferences sh = await SharedPreferences.getInstance();
+    setState(() {
+      nameuser = sh.getString(G_use_name);
+    });
+    print('obsssssssssject');
+    print(nameuser);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getName();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
         appBar: AppBar(
-          actions: [
-            IconButton(onPressed: (){}, icon: SvgPicture.asset('assets/icons/bell.svg',width: getProportionateScreenWidth(20),))
-          ],
-          titleSpacing: 10,
-          titleTextStyle: TextStyle(height: 1),
-          toolbarHeight: getProportionateScreenHeight(60),
-          leading: Container(
-            padding: EdgeInsets.only(right: 10),
-            child: CircleAvatar(
-              radius: getProportionateScreenHeight(24),
-              backgroundImage: NetworkImage(
-                  'https://womenss.net/wp-content/uploads/2021/01/8774-2.jpg'),
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => NotificationScrean()),
+                    );
+                  },
+                  icon: SvgPicture.asset(
+                    'assets/icons/bell.svg',
+                    width: getProportionateScreenWidth(20),
+                  ))
+            ],
+            titleSpacing: 10,
+            titleTextStyle: TextStyle(height: 1),
+            toolbarHeight: getProportionateScreenHeight(60),
+
+            leading: Container(
+              padding: EdgeInsets.only(right: 10),
+              child: CircleAvatar(
+                radius: getProportionateScreenHeight(24),
+                backgroundImage: NetworkImage(
+                    'https://b11f.com/img/icon/nour.jpg'),
+              ),
             ),
           ),
           title: Container(
@@ -60,6 +98,7 @@ class _Main_PageState extends State<Main_Page> {
             ],),
           )
         ),
+
         body: Directionality(
           // add this
           textDirection: TextDirection.rtl, // set this property

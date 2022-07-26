@@ -16,7 +16,8 @@ class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
-      "text": "هنا تم إجراء التعديلات من المجموعة أبو النور ",
+      "text":
+      "تطبيق خدمي يُعنى بتأمين عقارات تجارية ومواصلات  ",
       "image": "assets/images/hello1.png"
     },
     {
@@ -71,7 +72,7 @@ class _BodyState extends State<Body> {
                     DefaultButton(
                       text: "التالي",
                       press: () {
-                        Navigator.pushNamed(context, SignInScreen.routeName);
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignInScreen()));
                       },
                     ),
                     Spacer(),

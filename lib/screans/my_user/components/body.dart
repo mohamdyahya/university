@@ -1,7 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:university/config.dart';
 import 'package:university/screans/app_about/app_info_screen.dart';
+import 'package:university/screans/sign_in/sign_in_screen.dart';
+import 'package:university/screans/university/uninersity.dart';
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -12,6 +17,42 @@ class Body extends StatefulWidget {
   State<Body> createState() => _BodyState();
 }
 class _BodyState extends State<Body> {
+
+  logout(context) async {
+    SharedPreferences sh = await SharedPreferences.getInstance();
+    sh.remove(G_use_id);
+    sh.remove(G_use_name);
+    sh.remove(G_use_token);
+    sh.remove(G_use_mobile);
+    sh.remove(G_use_image);
+    sh.remove(G_use_email);
+    sh.remove(doneEnter);
+
+    sh.clear();
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => University()));
+  }
+
+  String nameuser = '';
+  String emailuser = '';
+  Future getNameem() async {
+    SharedPreferences sh = await SharedPreferences.getInstance();
+
+    setState(() {
+      nameuser = sh.getString(G_use_name);
+      emailuser = sh.getString(G_use_email);
+    });
+
+    print(nameuser);
+    print(emailuser);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getNameem();
+  }
+
   bool _switchValue=false;
   @override
   Widget build(BuildContext context) {
@@ -46,17 +87,17 @@ class _BodyState extends State<Body> {
                     ),
                     radius: getProportionateScreenHeight(96),
                     backgroundImage: NetworkImage(
-                        "https://womenss.net/wp-content/uploads/2021/01/8774-2.jpg"),
+                        'https://b11f.com/img/icon/nour.jpg'),
                   ),
                 ],
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.01),
               Text(
-                "محمد نور بدوي ",
+                nameuser,
                 style: headingStyleSecond,
               ),
               Text(
-                "m.nour.eng@gmail.com ",
+                emailuser,
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.05),
               InkWell(
@@ -149,8 +190,13 @@ class _BodyState extends State<Body> {
                 thickness: 0.5,
               ),
               InkWell(
+
                 highlightColor: Colors.transparent,
                 splashColor: Colors.transparent,
+
+                onTap: (){
+                  logout(context);
+                },
                 child: Row(children: [
                   SvgPicture.asset("assets/icons/logout.svg",
                       height: getProportionateScreenHeight(24), width: getProportionateScreenWidth(24), alignment: Alignment.center),

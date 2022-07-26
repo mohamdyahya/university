@@ -4,6 +4,7 @@ import 'package:university/size_config.dart';
 const kShadowColor = Color(0xD9E6E6E6);
 const kPrimaryColor = Color(0xFFFFCC00);
 const kPrimaryLightColor = Color(0xFFFFEDA6);
+const kPrimaryLightColorOpacity = Color(0x7EFFEDA6);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
